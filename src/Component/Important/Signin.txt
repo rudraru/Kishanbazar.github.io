@@ -1,0 +1,130 @@
+import React, { useState } from 'react';
+import './Login.css';
+const LoginTwo = ({ history }) => {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+
+  const handleEmailChange = (event) => {
+    setEmail(event.target.value);
+  };
+
+  const handlePasswordChange = (event) => {
+    setPassword(event.target.value);
+  };
+
+
+  const handleSignIn = (event) => {
+    event.preventDefault();
+    if (email === 'r@fkt.com' && password === 'password') {
+      setIsAuthenticated(true);
+      // Change the path to "/" on successful login
+      if (window.history) {
+        window.history.pushState({}, null, "/");
+      }
+    } else {
+      alert('Invalid email or password');
+    }
+  };
+  
+
+
+
+
+
+
+  if (isAuthenticated) {
+    return null; // Don't render anything here
+  }
+
+  return (
+    <div className="form-container">
+      <h1>Sign In!</h1>
+      <form className="sign-up-form" onSubmit={handleSignIn}>
+        <label>
+          Email:
+          <input value={email} onChange={handleEmailChange} />
+        </label>
+        <label>
+          Password:
+          <input type="password" value={password} onChange={handlePasswordChange} />
+        </label>
+        <button className="login-btn">Sign In!</button>
+
+      </form>
+    </div>
+  );
+};
+
+export default LoginTwo;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* App */
+.App{
+  background-color: #C98BB9;
+  height: 100vh;
+}
+
+/* Quikly Center Everything In Div */
+.cfb{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Container Styling */
+.Container{
+  position: relative; 
+
+  width: 50%;
+  height: 60%;
+
+  box-shadow: 1px 2px 2px #592941;
+  border: 0.1em solid #5a4b53;
+  border-radius: 0.5em;
+
+  background-image: url('../public/Image/Carrot.png'); 
+}
+
+/* Banner Side of Container */
+.banner-side{
+  position: absolute;
+  z-index: 2;
+  right: 65%;
+
+  border: 0.1em solid #592941;
+  border-radius: 0.5em;
+
+  width: 35%;
+  height: 100%;
+
+  flex-direction: column;
+
+  background-color: #035E7B;
+  opacity: 1;
+
+  color: #EEFCF8;
+  text-align: center;
+
+  transition: 2s;
+}

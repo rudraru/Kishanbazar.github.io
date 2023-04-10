@@ -1,0 +1,77 @@
+
+
+  .nav{
+
+    background-color: rgba(150, 101, 138, 0.226);
+  }
+
+
+
+  .Navitem {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+
+   
+        width: 35rem;
+        position: relative;
+    
+
+
+  }
+  
+  .Navitem a {
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    position: relative;
+  }
+  .Navitem a:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: yellow;
+    visibility: hidden;
+    transform: scaleX(0);
+    transition: all 0.2s ease-in-out;
+    top: -2px; /* Updated to position line above text */
+  }
+  
+  .Navitem a:hover:before {
+    visibility: visible;
+    transform: scaleX(1);
+  }
+  
+  .Navitem a:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: -2px;
+    left: 0;
+    background-color: lightgreen; /* Updated to light green */
+    visibility: hidden;
+    transform: scaleX(0);
+    transition: all 0.2s ease-in-out;
+  }
+  
+  .Navitem a:hover:after {
+    visibility: visible;
+    transform: scaleX(1);
+    top: 100%; /* Updated to position line below text */
+  }
+  
+  
+
+
+  
+  
+  .Navitem a:hover {
+    color:  linear-gradient(to right, #833AB4, #C13584, #E1306C, #FD1D1D, #F56040, #FFC107); /* create a purple-pink gradient */
+  }
+  
