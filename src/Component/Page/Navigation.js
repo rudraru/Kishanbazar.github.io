@@ -10,7 +10,7 @@ class Navigation extends React.Component {
        
           <Link to='/' > Home</Link>
       
-          <Link to='/Aboutus' > About us</Link>
+          <Link to='/Aboutus/us' > About us</Link>
         
          
           <Link to='/fruits' > Vegetables</Link>
@@ -20,20 +20,11 @@ class Navigation extends React.Component {
           
         </ul>
         <form >
-        <div class="search-box">
+        <div className="search-box">
   <input type="text" placeholder="Search..."/>
   <button type="submit">Search</button>
 
 
- <Link to='/SignIn'>
-  <button type='submit'>Sign In</button> 
-
-  </Link> 
-
-  <Link to='/Signup'>
-  <button type='submit'>Sign Up</button> 
-
-  </Link>
 
 
 </div>

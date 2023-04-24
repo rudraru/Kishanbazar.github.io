@@ -1,6 +1,6 @@
 import React from 'react';
-import VegetableCard from './VegetableCard';
-import fruits from './Card';
+
+
 import { Link } from 'react-router-dom';
 import './Home.css'
 
