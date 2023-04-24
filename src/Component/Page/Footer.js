@@ -29,7 +29,7 @@ function Footer() {
       <div className="border-box">
         <ul>
           <li>
-            <Link to="/Aboutus">About Us</Link>
+            <Link to="/Aboutus/us">About Us</Link>
           </li>
           <li>
             <Link to="/help">Need Help?</Link>
@@ -40,9 +40,9 @@ function Footer() {
           <li>
             <Link to="/terms">Terms of Use</Link>
           </li>
-          <li>
+          {/* <li>
             <Link to="/blogs">Blogs</Link>
-          </li>
+          </li> */}
         </ul>
       </div>
     </footer>
