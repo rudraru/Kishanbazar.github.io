@@ -1,4 +1,4 @@
-
+/* 
 
   .nav{
 
@@ -40,7 +40,7 @@
     transform: scaleX(0);
     transition: all 0.2s ease-in-out;
     top: -2px; /* Updated to position line above text */
-  }
+  /* }
   
   .Navitem a:hover:before {
     visibility: visible;
@@ -55,7 +55,7 @@
     bottom: -2px;
     left: 0;
     background-color: lightgreen; /* Updated to light green */
-    visibility: hidden;
+    /* visibility: hidden;
     transform: scaleX(0);
     transition: all 0.2s ease-in-out;
   }
@@ -63,15 +63,126 @@
   .Navitem a:hover:after {
     visibility: visible;
     transform: scaleX(1);
-    top: 100%; /* Updated to position line below text */
+    top: 100%; Updated to position line below text */
+  /* }
+   */
+  
+
+
+
+
+
+
+   .Navitem {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+
+   
+        width: 35rem;
+        position: relative;
+    
+
+   }
+   .nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f2f2f2;
+    padding: 10px;
   }
   
+  .toggle-button {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 24px;
+    cursor: pointer;
+  }
   
-
-
+  .toggle-line {
+    width: 24px;
+    height: 2px;
+    background-color: #333;
+    transition: all 0.3s ease-in-out;
+  }
   
+  .toggle-line.active:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
   
-  .Navitem a:hover {
-    color:  linear-gradient(to right, #833AB4, #C13584, #E1306C, #FD1D1D, #F56040, #FFC107); /* create a purple-pink gradient */
+  .toggle-line.active:nth-child(2) {
+    opacity: 0;
+  }
+  
+  .toggle-line.active:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+  }
+  
+  @media (max-width: 768px) {
+    .toggle-button {
+      display: flex;
+    }
+    
+    .nav-items {
+      display: none;
+      flex-direction: column;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      position: absolute;
+      top: 60px;
+      left: 0;
+      right: 0;
+      background-color: #f2f2f2;
+      z-index: 1;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    }
+  
+    .nav-items.show-menu {
+      display: flex;
+    }
+  
+    .nav-item {
+      margin: 10px 0;
+    }
+  
+    .nav-item a {
+      display: block;
+      padding: 10px;
+      text-decoration: none;
+      color: #333;
+    }
+    
+    .search-box {
+      margin-top: 10px;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+    }
+  
+    .search-box input[type="text"] {
+      width: 80%;
+      padding: 5px;
+      font-size: 16px;
+      border: none;
+      border-radius: 3px;
+    }
+  
+    .search-box button[type="submit"] {
+      width: 15%;
+      padding: 5px;
+      font-size: 16px;
+      background-color: #333;
+      color: #fff;
+      border: none;
+      border-radius: 3px;
+      cursor: pointer;
+    }
   }
   
