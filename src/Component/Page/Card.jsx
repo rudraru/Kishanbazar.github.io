@@ -1,94 +1,166 @@
 const fruits = [
-    {
-      id: 1,
-      name: "Apple",
-      price: 50,
-      image: require('../Image/Carrot.png').default,
-    },
-    {
-      id: 2,
-      name: "Banana",
-      price: 20,
-      image: "https://via.placeholder.com/150",
-    },
-    {
-      id: 3,
-      name: "Orange",
-      price: 30,
-      image: "https://via.placeholder.com/150",
-    },
-    {
-      id: 4,
-      name: "Mango",
-      price: 100,
-      image: "https://via.placeholder.com/150",
-    },
-    {
-      id: 5,
-      name: "Pineapple",
-      price: 80,
-      image: "https://via.placeholder.com/150",
-      
-    },
-    {
-      id: 6,
-      name: "Watermelon",
-      price: 80,
-      image: "https://via.placeholder.com/150",
-      
-    },
-    {
-      id: 7,
-      name: "King Oyster",
-      price: 80,
-      image: "https://via.placeholder.com/150",
-      
-    },
+  {
+    id: 1,
+    name: 'Apple',
+    category: 'Fruit',
+    image: 'https://tse2.mm.bing.net/th?id=OIP.5bLEGgrUJw9PXpPA3ReYBwHaGU&pid=Api&P=0',
+    price: 100,
+    benefits: 'Rich in antioxidants and dietary fiber, promotes heart health',
+  },
 
-    {
-      id: 8,
-      name: "Banana malbok",
-      price: 80,
-      image: "https://via.placeholder.com/150",
-      
-    },
-    {
-      id: 9,
-      name: "gud",
-      price: 80,
-      image: "https://via.placeholder.com/150",
-      
-    },
-    {
-      id: 10,
-      name: "MAUSAM",
-      price: 80,
-      image: "https://via.placeholder.com/150",
-      
-    },
+  {
+    id: 2,
+    name: 'Banana',
+    category: 'Fruit',
+    image: 'https://images.unsplash.com/photo-1519681393784-d120267933ba',
+    price: 50,
+    benefits: 'Rich in potassium, regulates blood pressure, aids digestion',
+  },
   
-    {
-      id: 11,
-      name: "Bayer",
-      price: 80,
-      image: "https://via.placeholder.com/150",
-      
-    },
-    {
-      id: 12,
-      name: "Kiwi",
-      price: 80,
-      image: "https://via.placeholder.com/150",
-      
-    },
-    {
-      id: 13,
-      name: "Malta",
-      price: 80,
-      image: "https://via.placeholder.com/150",
-      
-    },
-    
-  ];
+  {
+    id: 3,
+    name: 'Orange',
+    category: 'Fruit',
+    image: 'https://tse2.mm.bing.net/th?id=OIP.cHoLk438U6MMz_b3IRKTgQHaE2&pid=Api&P=0',
+    price: 80,
+    benefits: 'Rich in vitamin C, boosts immunity, promotes skin health',
+  },
+  {
+    id: 4,
+    name: 'Mango',
+    category: 'Fruit',
+    image: 'https://tse1.mm.bing.net/th?id=OIP.LJJ0uDYS5ZhDr2zJA-Q9sAHaFe&pid=Api&P=0',
+    price: 120,
+    benefits: 'Rich in vitamins A and C, promotes eye health, boosts immunity',
+  },
+  {
+    id: 5,
+    name: 'Pineapple',
+    category: 'Fruit',
+    image: 'https://tse1.mm.bing.net/th?id=OIP.o0JSExiLmf62YcdwxXlR3QHaHa&pid=Api&P=0',
+    price: 90,
+    benefits: 'Rich in vitamin C and antioxidants, aids digestion, reduces inflammation',
+  },
+  {
+    id: 6,
+    name: 'Watermelon',
+    category: 'Fruit',
+    image: 'https://images.unsplash.com/photo-1604395450341-5e5b3a8e6e1b',
+    price: 70,
+    benefits: 'Rich in vitamins A and C, promotes hydration, aids digestion',
+  },
+  {
+    id: 7,
+    name: 'Grapes',
+    category: 'Fruit',
+    image: 'https://images.unsplash.com/photo-1594710319121-1369cfb0f34f',
+    price: 60,
+    benefits: 'Rich in antioxidants, promotes heart health, reduces inflammation',
+  },
+  {
+    id: 8,
+    name: 'Strawberry',
+    category: 'Fruit',
+    image: 'https://images.unsplash.com/photo-1549148819-82a84d185b42',
+    price: 110,
+    benefits: 'Rich in vitamin C and antioxidants, promotes skin health, reduces inflammation',
+  },
+  {
+    id: 9,
+    name: 'Pomegranate',
+    category: 'Fruit',
+    image: 'https://images.unsplash.com/photo-1555096462-5f6c5caa4a8f',
+    price: 130,
+    benefits: 'Rich in antioxidants, promotes heart health, reduces inflammation',
+  },
+  {
+    id: 10,
+    name: 'Blueberry',
+    category: 'Fruit',
+    image: 'https://images.unsplash.com/photo-1619268123456-b8d6a5a9e72e',
+    price: 95,
+    benefits: 'Rich in antioxidants and dietary fiber, promotes brain health, reduces inflammation',
+  },
+  {
+    id: 11,
+    name: 'Avocado',
+    category: 'Fruit',
+    image: 'https://images.unsplash.com/photo-1581092209994-d89674e30d4d',
+    price: 150,
+    benefits: 'Rich in healthy fats, promotes heart health, aids digestion',
+  },
+  {
+    id: 12,
+    name: 'Kiwi',
+    category: 'Fruit',
+    image: 'https://tse3.mm.bing.net/th?id=OIP.h3eda6g4hG65tBvLwTHR2QHaF5&pid=Api&P=0',
+    price: 85,
+    benefits: 'Rich in vitamin C and antioxidants, promotes digestion, boosts immunity',
+  },
+  {
+    id: 13,
+    name: 'Pear',
+    category: 'Fruit',
+    image: 'https://images.unsplash.com/photo-1507089948035-a389e9c3f1f7',
+    price: 75,
+    benefits: 'Rich in dietary fiber, promotes heart health, aids digestion',
+  },
+  {
+    id: 14,
+    name: 'Dragon fruit',
+    category: 'Fruit',
+    image: 'https://images.unsplash.com/photo-1527189205348-7d25b48eb70f',
+    price: 200,
+    benefits: 'Rich in vitamin C and antioxidants, promotes digestion, boosts immunity',
+  },
+  {
+    id: 15,
+    name: 'Lemon',
+    category: 'Fruit',
+    image: 'https://images.unsplash.com/photo-1517637180634-8f16a3d34ad3',
+    price: 30,
+    benefits: 'Rich in vitamin C and antioxidants, promotes digestion, boosts immunity',
+  },
+  {
+    id: 16,
+    name: 'Raspberry',
+    category: 'Fruit',
+    image: 'https://images.unsplash.com/photo-1532622829325-5a810fda9662',
+    price: 120,
+    benefits: 'Rich in vitamin C and antioxidants, promotes skin health, reduces inflammation',
+  },
+  {
+    id: 17,
+    name: 'Cherry',
+    category: 'Fruit',
+    image: 'https://images.unsplash.com/photo-1519676867243-6b3e2b76e65d',
+    price: 100,
+    benefits: 'Rich in antioxidants, promotes heart health, reduces inflammation',
+  },
+  {
+    id: 18,
+    name: 'Grapefruit',
+    category: 'Fruit',
+    image: 'https://images.unsplash.com/photo-1511252626731-1bb736071aad',
+    price: 65,
+    benefits: 'Rich in vitamin C and antioxidants, promotes weight loss, boosts immunity',
+  },
+  {
+    id: 19,
+    name: 'Cantaloupe',
+    category: 'Fruit',
+    image: 'https://images.unsplash.com/photo-1577214523872-f50c3b2d2f9c',
+    price: 80,
+    benefits: 'Rich in vitamins A and C, promotes hydration, aids digestion',
+  },
+  {
+    id: 20,
+    name: 'Plum',
+    category: 'Fruit',
+    image: 'https://images.unsplash.com/photo-1592218398815-5ef7b5da52a1',
+    price: 90,
+    benefits: 'Rich in dietary fiber, promotes digestion, reduces inflammation',
+  },
+];
 
   export default fruits;

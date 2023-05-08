@@ -5,7 +5,7 @@ const VideoBackground = () => {
   return (
     <div className="video-background">
       <ReactPlayer
-        url="https://www.youtube.com/watch?v=dnkmHthDSEo&list=PLxox4EslpGPwLppU_bRR92jGlMfqZ3lOH&index=2"
+        url="https://www.youtube.com/watch?v=fEErySYqItI&pp=ygUpY2luZW1hdGljIHZpZGVvIGJhY2tncm91bmQgc2NlbmUgb2YgbmVwYWw%3D"
        
         width="100%"
         height="100%"

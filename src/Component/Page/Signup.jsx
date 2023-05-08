@@ -45,7 +45,7 @@ const Signup = () => {
 
     setTimeout(() => {
       setSuccess(false);
-      history('/');
+      history('/SignIn');
     }, 4000);
   };
 
@@ -57,7 +57,7 @@ const Signup = () => {
 
       {success && (
         <div className="success-popup">
-          <p>Signup successful! Redirecting to home page...</p>
+          <p>Signup successful! Redirecting to LogIn page ...</p>
         </div>
       )}
 
