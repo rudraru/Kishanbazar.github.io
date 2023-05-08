@@ -1,156 +1,101 @@
 .about-us-container {
-    max-width: 60%;
-  background-color: #ffffff21;
-    margin: 10px auto;
-    /* padding: 15rem; */
-
-    text-align: center;
-  }
-  
-  .about-us-container h1 {
-    font-size: 2.5rem;
-    margin-bottom: 2rem;
-  }
-  
-  .about-us-container p {
-    font-size: 1.2rem;
-    margin-bottom: 1.5rem;
-    line-height: 1.5;
-    
-  }
-  
-  .owner-cards-container {
-    display:flex;
-
-    flex-wrap: wrap;
-    justify-content: center;
-    margin-bottom: 3rem;
-
-  }
-  
-  .owner-card {
-    width: 100%;
-    max-width: 500px;
-    text-align: center;
-    background-color: #ffffff52;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease;
-    overflow: hidden;
-    margin: 1rem;
-  }
-  
-  .owner-photo {
-    height: 200px;
-    background-size: cover;
-    background-position: center;
-  }
-  
-  .owner-name {
-    font-size: 1.5rem;
-    margin: 1rem 0;
-  }
-  
-  .owner-position {
-    font-size: 1.2rem;
-    margin-bottom: 1.5rem;
-  }
-  
-  .owner-card:hover {
-    transform: translateY(-10px);
-  }
-  
-  @media screen and (min-width: 768px) {
-    .owner-cards-container {
-      justify-content: space-between;
-    }
-  }
-  
-  
-  /* Footer styles */
-  /* footer {
-    background-color: #2c3e50;
-    color: #ffffff;
-    padding: 3rem;
-  }
-   */
-  .footer-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-  
-  .footer-section {
-    flex-basis: 30%;
-  }
-  
-  /* .footer-title {
-    font-size: 1.5rem;
-    font-weight: 700;
-    margin-bottom: 1rem;
-  }
-  
-  ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  } */
-  
-  /* li {
-    margin-bottom: 0.5rem;
-  }
-   */
-  /* a {
-    color: #918d8d;
-    text-decoration: none;
-  } */
-  
-  /* a:hover {
-    text-decoration: underline;
-  } */
-  
-
-
-
-/* Set up global styles */
-body {
-  margin: 0;
-  padding: 0;
-  font-family: Arial, sans-serif;
+  height: 500px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  height: 100vh;
 }
 
-/* Style the main container */
-main {
-
-  background-color: #f2f2f221;
+.overlay {
+  background-color: rgba(236, 212, 212, 0.5);
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
 }
 
-/* Style the title */
-.about-us-container .title {
-  font-size: 36px;
-  font-weight: bold;
-  margin-bottom: 20px;
-  color: #333;
-}
+.content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
 
-/* Style the descriptions */
-.about-us-container .description {
-  font-size: 18px;
-  line-height: 1.5;
-  margin-bottom: 20px;
-  color: #555;
-}
-
-/* Add a border to the container */
-.about-us-container {
-  border: 1px solid #cccccc7a;
-  border-radius: 5px;
+  transform: translate(-50%, -50%);
+  color: white;
+  max-width: 800px;
   padding: 20px;
+  text-align: center;
 }
 
-/* Add a hover effect to the container */
-.about-us-container:hover {
-  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+/* Owner Cards Container */
+.owner-cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 50px;
 }
 
+/* Owner Card */
+.owner-card {
+  width: 300px;
+  margin: 20px;
+  padding: 20px;
+  background-color: white;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  transition: all 0.3s ease-in-out;
+}
+
+.owner-card:hover {
+  transform: scale(1.05);
+}
+
+/* Owner Photo */
+.owner-photo {
+  width: 200px;
+  height: 200px;
+  margin: 0 auto 20px auto;
+  background-size: cover;
+  background-position: center;
+  border-radius: 50%;
+}
+
+/* Owner Name */
+.owner-name {
+  margin-bottom: 5px;
+}
+
+/* Owner Position */
+.owner-position {
+  color: #666;
+  font-style: italic;
+}
+
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  background-color: #f2f2f2e5;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  color: #333;
+  font-size: 1.5rem;
+  line-height: 1.5;
+  text-align: center;
+}
+
+
+.content h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  text-shadow: 2px 2px #888;
+}
+
+.content p {
+  font-size: 1.25rem;
+  margin-bottom: 1.5rem;
+  text-shadow: 1px 1px #888;
+}

@@ -5,9 +5,18 @@ const createUser = async (name, email, password) => {
     const response = await axios.post('http://localhost:3001/users', { name, email, password });
     return response.data;
   } catch (error) {
-    console.error(error);
     throw error;
   }
 };
 
-export { createUser };
+// const loginUser = async (email, password) => {
+//   try {
+//     const response = await axios.post('http://localhost:3001/login', { email, password });
+//     return response.data;
+//   } catch (error) {
+//     throw error;
+//   }
+// };
+
+export default  createUser;
+// export default loginUser;

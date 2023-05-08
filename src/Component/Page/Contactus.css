@@ -1,32 +1,24 @@
-
-
-   .contact-container {
-    max-width: 950px;
-    margin: 34px auto;
-    padding: 11%;
+.contact-container {
+    max-width: 600px;
+    margin: auto;
+    padding: 20px;
     border: 1px solid #ccc;
     border-radius: 5px;
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
-    font-family: Arial, Helvetica, sans-serif;
-    
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   }
   
   .contact-heading {
-    font-size: 32px;
-    text-align: center;
-    margin-bottom: 20px;
+    font-size: 2rem;
+    margin-bottom: 10px;
   }
   
   .contact-description {
-    text-align: center;
     margin-bottom: 20px;
   }
   
   .contact-details {
     list-style: none;
-    margin: 0;
-    padding: 0;
-    text-align: center;
+    padding-left: 0;
     margin-bottom: 20px;
   }
   
@@ -34,22 +26,10 @@
     margin-bottom: 10px;
   }
   
-  .success-message {
-    color: green;
-    text-align: center;
-    margin-bottom: 20px;
-  }
-  
-  .contact-form {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
   .contact-label {
     display: block;
     margin-bottom: 5px;
+    font-weight: bold;
   }
   
   .contact-input,
@@ -57,71 +37,33 @@
     display: block;
     width: 100%;
     padding: 10px;
-    margin-bottom: 20px;
     border: 1px solid #ccc;
     border-radius: 5px;
+    margin-bottom: 10px;
   }
   
   .contact-textarea {
-    resize: vertical;
+    height: 150px;
   }
   
   .contact-submit-button {
     display: block;
     width: 100%;
     padding: 10px;
-    border: none;
-    background-color: #007bff;
-    color: #fff;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease-in-out;
-  }
-  
-  .contact-submit-button:hover {
-    background-color: #0062cc;
-  }
-  
-  @media screen and (min-width: 768px) {
-    .contact-form {
-      flex-basis: 60%;
-    }
-  
-    .contact-input,
-    .contact-textarea {
-      margin-bottom: 10px;
-    }
-  
-    .contact-submit-button {
-      width: auto;
-    }
-  }
-  
-
-
-  .success-message {
-    position: fixed;
-    top: 140px;
-    right: 300px;
     background-color: #4CAF50;
     color: white;
-    padding: 10px;
+    border: none;
     border-radius: 5px;
-    z-index: 9999;
+    cursor: pointer;
   }
   
-  .success-message.show {
-    animation: fadeOut 5s ease-in-out;
+  .success-message {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #DFF2BF;
+    border: 1px solid #B2C8A9;
+    color: #4F8A10;
+    border-radius: 5px;
+    text-align: center;
   }
   
-  @keyframes fadeOut {
-    0% {
-      opacity: 1;
-    }
-    90% {
-      opacity: 1;
-    }
-    100% {
-      opacity: 0;
-    }
-  }

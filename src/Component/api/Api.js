@@ -19,3 +19,4 @@ const createUser = async (name, email, password) => {
 // };
 
 export default  createUser;
+// export default loginUser;

@@ -1,10 +1,10 @@
 
-
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import './Contactus.css';
 
 function ContactUs() {
   const [showSuccessMessage, setShowSuccessMessage] = useState(false);
+  const formRef = useRef(null);
 
   function handleSubmit(event) {
     event.preventDefault();
@@ -16,6 +16,7 @@ function ContactUs() {
       .then(() => {
         setShowSuccessMessage(true);
         setTimeout(() => setShowSuccessMessage(false), 5000);
+        formRef.current.reset(); // reset the form fields
       })
       .catch((error) => {
         console.error('Error sending contact email:', error);
@@ -32,7 +33,7 @@ function ContactUs() {
         <li className="contact-details-item">Address:Machhapokhari, Tokha,Nepal</li>
       </ul>
       {showSuccessMessage && <p className="success-message">Thanks for contacting us!</p>}
-      <form onSubmit={handleSubmit} data-netlify="true" method="POST">
+      <form onSubmit={handleSubmit} data-netlify="true" method="POST" ref={formRef}>
         <input type="hidden" name="form-name" value="contact" />
         <label htmlFor="name" className="contact-label">Name:</label>
         <input type="text" id="name" name="name" className="contact-input" placeholder="Enter your name" required />
@@ -47,4 +48,3 @@ function ContactUs() {
 }
 
 export default ContactUs;
-
