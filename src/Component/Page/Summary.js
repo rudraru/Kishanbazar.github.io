@@ -235,9 +235,12 @@ import "./Summary.css";
 
 import { createOrder } from '../api/CrateOrder';
 
+import { v4 as uuidv4 } from 'uuid';
 
 
 const SummaryPage = () => {
+  const [myOrderId, setMyOrderId] = useState(null);
+
   const [cartItemsWithDetails, setCartItemsWithDetails] = useState([]);
   const { customerName } = useParams();
   const location = useLocation();
@@ -269,7 +272,61 @@ const SummaryPage = () => {
     fetchCartItemsData();
   }, [cartItems]);
 
+
+
+
+
+  // const handleConfirmOrder = async () => {
+  //   const orderData = {
+  //     name,
+  //     email,
+  //     phone,
+  //     address,
+  //     paymentMethod,
+  //     items: cartItemsWithDetails,
+  //   };
+  
+  //   try {
+  //     // Create the order
+  //     await createOrder(orderData);
+  
+  //     // Insert cart items into the cartitems table
+  //     const orderId = uuidv4();
+  //     const cartItemsData = cartItemsWithDetails.map((item) => ({
+  //       order_id: orderId,
+  //       item_name: item.name,
+  //       item_price: item.price,
+  //       quantity: item.quantity,
+  //     }));
+  //     await axios.post('http://localhost:3001/cartitems', cartItemsData);
+  
+  //     // Clear the cart items from the local storage
+  //     localStorage.removeItem('cartItems');
+  
+  //     // Set the order confirmation state to true
+  //     setOrderConfirmed(true);
+  
+  //     // Redirect to homepage after 2 seconds
+  //     setTimeout(() => {
+  //       history('/');
+  //     }, 2000);
+  //   } catch (error) {
+  //     console.error(error);
+  //   }
+  // };
+
+
   const handleConfirmOrder = async () => {
+   
+   
+    const items = props.items.map(item => {
+      return {
+        item_name: item.name,
+        item_price: item.price,
+        quantity: item.quantity,
+      };
+    });
+   
     const orderData = {
       name,
       email,
@@ -278,17 +335,33 @@ const SummaryPage = () => {
       paymentMethod,
       items: cartItemsWithDetails,
     };
-    try {
-      await createOrder(orderData);
+  
+    axios.post('/orders', orderData)
+    .then(response => {
+      // Handle successful response
+      console.log(response.data);
+    })
+    .catch(error => {
+      // Handle error
+      console.log(error);
+    });
+};
+      
+     
+      // Clear the cart items from the local storage
+      localStorage.removeItem('cartItems');
+  
+      // Set the order confirmation state to true
       setOrderConfirmed(true);
+  
+      // Redirect to homepage after 2 seconds
       setTimeout(() => {
-        history('/');
-      }, 2000); // redirect to homepage after 2 seconds
-    } catch (error) {
-      console.error(error);
-    }
-  };
+        history.push('/');
+      }, 2000);
+ 
+  
 
+      
   return (
     <div className="summary-page">
       <h1>Summary Page</h1>
@@ -313,8 +386,9 @@ const SummaryPage = () => {
           <option value="paypal">Fonepay</option>
           <option value="paypal">Esewa</option>
         </select>
-        <button onClick={handleConfirmOrder}>Confirm Order</button>
-        {orderConfirmed && <p style={{ color: 'red' }}>Order confirmed! Redirecting to homepage...</p>}
+        <button onClick={() => handleConfirmOrder(myOrderId)}>Confirm Order</button>
+{orderConfirmed && <p style={{ color: 'red' }}>Order confirmed! Redirecting to homepage...</p>}
+
        
       </div>
     </div>

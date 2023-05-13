@@ -1,0 +1,101 @@
+.about-us-container {
+  height: 500px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  height: 100vh;
+}
+
+.overlay {
+  background-color: rgba(236, 212, 212, 0.5);
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  transform: translate(-50%, -50%);
+  color: white;
+  max-width: 800px;
+  padding: 20px;
+  text-align: center;
+}
+
+/* Owner Cards Container */
+.owner-cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+/* Owner Card */
+.owner-card {
+  width: 300px;
+  margin: 20px;
+  padding: 20px;
+  background-color: white;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  transition: all 0.3s ease-in-out;
+}
+
+.owner-card:hover {
+  transform: scale(1.05);
+}
+
+/* Owner Photo */
+.owner-photo {
+  width: 200px;
+  height: 200px;
+  margin: 0 auto 20px auto;
+  background-size: cover;
+  background-position: center;
+  border-radius: 50%;
+}
+
+/* Owner Name */
+.owner-name {
+  margin-bottom: 5px;
+}
+
+/* Owner Position */
+.owner-position {
+  color: #666;
+  font-style: italic;
+}
+
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  background-color: #f2f2f2e5;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  color: #333;
+  font-size: 1.5rem;
+  line-height: 1.5;
+  text-align: center;
+}
+
+
+.content h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  text-shadow: 2px 2px #888;
+}
+
+.content p {
+  font-size: 1.25rem;
+  margin-bottom: 1.5rem;
+  text-shadow: 1px 1px #888;
+}

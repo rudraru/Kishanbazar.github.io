@@ -1,75 +1,8 @@
-.App {
-  max-width: 960px;
-  margin: 0 auto;
-  padding: 1rem;
-}
-
-.header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 1rem;
-}
-
-.logo {
-  font-size: 2rem;
-  font-weight: bold;
-  color: #333;
-}
-
-.cart-icon {
-  font-size: 1.5rem;
-  color: #333;
-}
-
-.cart-count {
-  font-size: 0.8rem;
-  background-color: #333;
-  color: #fff;
-  padding: 0.2rem 0.5rem;
-  border-radius: 50%;
-  margin-left: 0.5rem;
-}
-
-.main {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-}
-
-.footer {
-  margin-top: 1rem;
-  text-align: center;
-}
-
-
-
-
-
-
-
-
 
 
 /* terms-and-conditions.css */
 
-.container {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 20px;
-}
 
-h1 {
-  font-size: 36px;
-  text-align: center;
-  margin-bottom: 30px;
-}
-
-p {
-  font-size: 18px;
-  line-height: 1.5;
-  margin-bottom: 20px;
-}
 
 ul {
   list-style: none;
@@ -77,21 +10,3 @@ ul {
   margin: 0 0 20px 0;
 }
 
-li:before {
-  content: "•";
-  margin-right: 10px;
-}
-
-@media only screen and (max-width: 768px) {
-  .container {
-    padding: 10px;
-  }
-
-  h1 {
-    font-size: 28px;
-  }
-
-  p {
-    font-size: 16px;
-  }
-}

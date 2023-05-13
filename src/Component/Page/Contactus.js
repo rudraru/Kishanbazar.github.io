@@ -23,6 +23,7 @@ function ContactUs() {
       });
   }
 
+  
   return (
     <div className="contact-container">
       <h2 className="contact-heading">Contact Us</h2>

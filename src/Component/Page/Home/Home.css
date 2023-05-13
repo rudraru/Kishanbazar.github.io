@@ -1,0 +1,421 @@
+/* Home.module.css */
+
+
+
+
+.banner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 500px;
+  background-color: #f5f5f500;
+  
+
+
+}
+
+.Produce{
+
+  height: 100vh;
+
+
+
+
+
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+
+.shopbtn{
+  text-decoration: none;
+
+
+}
+
+
+
+
+.shopbtn{
+
+  color: #e9d3d3;
+
+
+
+display: inline-block;
+position: absolute;
+margin-top: 29%;
+margin-left: 72%;
+  border: none;
+  border-radius: 4px;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+
+.whyChooseUs {
+  margin-top: 2rem;
+}
+
+
+/* CSS */
+.shopbtn {
+  text-decoration: none;
+  align-items: center;
+  appearance: none;
+  background-color: #cdeed3;
+  border-radius: 24px;
+  border-style: none;
+
+  box-sizing: border-box;
+
+  cursor: pointer;
+  display: inline-flex;
+  fill: currentcolor;
+  font-family: "Google Sans",Roboto,Arial,sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  height: 48px;
+
+  text-align: center;
+  text-transform: none;
+  transition: box-shadow 280ms cubic-bezier(.4, 0, .2, 1),opacity 15ms linear 30ms,transform 270ms cubic-bezier(0, 0, .2, 1) 0ms;
+
+}
+
+.shopbtn:hover {
+  background: #F6F9FE;
+  color: #174ea6;
+}
+
+
+
+
+
+
+/* Full page banner */
+.banner {
+  height: 101vh;
+  display: flex;
+  flex-direction: column;
+
+
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+
+.container {
+  color: #050202;
+  display: flex;
+ margin-bottom: 5%;
+margin-left: 50%;
+  height: 100vh;
+}
+
+.contentHero {
+  text-align: center;
+}
+
+.contentHero h1 {
+  font-size: 90px;
+  font-weight: bold;
+  margin-bottom: 21px;
+}
+
+.contentHero p.text {
+  font-size: 30px;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+.contentHero p.text:last-child {
+  margin-bottom: 0;
+}
+
+.highlight {
+  font-weight: bold;
+  color: #ff9900;
+}
+
+
+
+/* Full page "Why Choose Us" section */
+.whyChooseUs {
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+/* Style for the banner slogan */
+
+
+/* Style for the banner CTA button */
+.banner button {
+  padding: 1rem 2rem;
+  font-size: 1.5rem;
+  background-color: #28a745;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+
+
+
+/* Shop by Category */
+.categories {
+  background-color: #e5f5f9;
+  padding: 1rem;
+  text-align: center;
+ 
+}
+
+.categories h2 {
+  font-size: 3rem;
+  margin-bottom: 2rem;
+}
+
+.categories ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.categories li {
+  margin: 1rem;
+  width: 30%;
+  background-color: white;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: all 0.2s ease-in-out;
+}
+
+.categories li:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.categories a {
+  display: block;
+  padding: 2rem;
+  text-align: center;
+  font-size: 2rem;
+  color: #333;
+  text-decoration: none;
+}
+
+.categories a:hover {
+  color: #e8f8ef;
+}
+
+
+
+
+
+
+
+
+
+
+header.banner {
+
+
+  padding: 0px;
+  /* background: linear-gradient(to right, #f0f0f0 50% , #ffffff 50%); */
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.whyChooseUs {
+  background-color: #c97373;
+
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 60px;
+}
+
+.whyChooseUs h2 {
+  font-size: 36px;
+  font-weight: bold;
+  margin-bottom: 30px;
+  text-align: center;
+  color: #220909;
+  text-shadow: 2px 2px #000;
+}
+
+.whyChooseUs ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.whyChooseUs li {
+  border: 2px solid #160808;
+  border-radius: 10px;
+  box-shadow: 2px 2px #000;
+  color: #05030365;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 20px;
+  padding: 30px;
+  position: relative;
+  transition: all 0.3s ease-in-out;
+  width: 300px;
+}
+
+.whyChooseUs li:before {
+  /* border-top: 2px dashed #fff; */
+  content: "";
+  height: 1px;
+  left: 0;
+  position: absolute;
+  top: 50%;
+  width: 100%;
+}
+
+.whyChooseUs li:hover {
+  background-color: #fff;
+  color: #000;
+  box-shadow: 2px 2px #fff;
+}
+
+/* .whyChooseUs li:hover:before {
+  border-top: 2px dashed #000;
+} */
+.whyChooseUsTitle {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+}
+
+.whyChooseUsChart {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.chartItem {
+  width: calc(33.33% - 1rem);
+  background-color: #f5f5f5;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  box-sizing: border-box;
+  border: 1px solid #ddd;
+  border-radius: 0.25rem;
+}
+
+.chartItem:hover {
+  background-color: #fff;
+  border-color: #bbb;
+}
+
+.chartItemTitle {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.chartItemBar {
+  background-color: #ddd;
+  height: 1rem;
+  border-radius: 0.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.chartItemBarFilled {
+  background-color: #4caf50;
+  height: 1rem;
+  border-radius: 0.25rem;
+}
+
+.chartItemPercentage {
+  font-size: 0.8rem;
+  color: #888;
+}
+
+
+
+.container1 {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+  border-bottom: 2px solid #ccc;
+}
+
+h2 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+}
+
+li {
+  margin-bottom: 5px;
+  position: relative;
+  padding-left: 30px;
+}
+
+.check {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  background-color: green;
+  border-radius: 50%;
+}
+
+li:before {
+  content: '';
+  position: absolute;
+  top: 10px;
+  left: 25px;
+  width: 1px;
+  height: 100%;
+  background-color: #ccc;
+}
+
+li:first-child:before {
+  display: none;
+}
