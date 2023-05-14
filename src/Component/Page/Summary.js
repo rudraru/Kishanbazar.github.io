@@ -1,246 +1,12 @@
-// // import React from "react";
-// // import "./Summary.css";
 
 
-
-
-
-
-
-
-
-
-// // const Summary = ({ cartItems, handleCancel, handleConfirm }) => {
-// //   let subtotal = 0;
-// //   let tax = 0;
-// //   let total = 0;
-
-// //   if (cartItems && cartItems.length > 0) {
-// //     subtotal = cartItems.reduce(
-// //       (acc, item) => acc + item.quantity * item.price,
-// //       0
-// //     );
-// //     tax = Math.round(subtotal * 0.1);
-// //     total = subtotal + tax;
-// //   }
-
-// //   return (
-// //     <div className="summary">
-// //       <h2>Order Summary</h2>
-// //       <table>
-// //         <thead>
-// //           <tr>
-// //             <th>Product Name</th>
-// //             <th>Order QTY</th>
-// //             <th>Unit</th>
-// //             <th>Price</th>
-// //             <th>Total</th>
-// //           </tr>
-// //         </thead>
-// //         <tbody>
-// //           {cartItems &&
-// //             cartItems.map((item) => (
-// //               <tr key={item.id}>
-// //                 <td>{item.name}</td>
-// //                 <td>{item.quantity} kg</td>
-// //                 <td>{item.unit}</td>
-// //                 <td>Rs {item.price}</td>
-// //                 <td>Rs {item.quantity * item.price}</td>
-// //               </tr>
-// //             ))}
-// //         </tbody>
-// //         <tfoot>
-// //           <tr>
-// //             <td colSpan="4">Subtotal</td>
-// //             <td>Rs {subtotal}</td>
-// //           </tr>
-// //           <tr>
-// //             <td colSpan="4">Tax</td>
-// //             <td>Rs {tax}</td>
-// //           </tr>
-// //           <tr>
-// //             <td colSpan="4">Total</td>
-// //             <td>Rs {total}</td>
-// //           </tr>
-// //         </tfoot>
-// //       </table>
-// //       <div className="buttons">
-// //         <button onClick={handleCancel}>Cancel Order</button>
-// //         <button onClick={handleConfirm}>Confirm Order</button>
-// //       </div>
-// //     </div>
-// //   );
-// // };
-
-// // export default Summary;
-
-
-
-
-
-
-
-
-// import React, { useState } from "react";
-// import { useParams, useLocation } from "react-router-dom";
-// import axios from "axios";
-
-// const Summary = () => {
-//   const { customerName } = useParams();
-//   const location = useLocation();
-//   const searchParams = new URLSearchParams(location.search);
-//   const cartItems = searchParams.get("cartItems")
-//     ? JSON.parse(searchParams.get("cartItems"))
-//     : [];
-
-//   const [orderConfirmed, setOrderConfirmed] = useState(false);
-//   const [name, setName] = useState("");
-//   const [email, setEmail] = useState("");
-//   const [phone, setPhone] = useState("");
-//   const [address, setAddress] = useState("");
-//   const [paymentMethod, setPaymentMethod] = useState("");
-
-//   const handleConfirmOrder = async () => {
-//     const orderData = {
-//       name,
-//       email,
-//       phone,
-//       address,
-//       paymentMethod,
-//       cartItems,
-//     };
-
-//     try {
-//       await axios.post("/orders", orderData);
-//       setOrderConfirmed(true);
-//     } catch (error) {
-//       console.error(error);
-//     }
-//   };
-
-//   const handleDeclineOrder = () => {
-//     setName("");
-//     setEmail("");
-//     setPhone("");
-//     setAddress("");
-//     setPaymentMethod("");
-//   };
-
-//   if (cartItems.length === 0) {
-//     return <div>No items in cart</div>;
-//   }
-
-//   return (
-//     <div>
-//       <h1>Order Summary</h1>
-//       <p>Customer Name: {customerName}</p>
-//       <table>
-//         <thead>
-//           <tr>
-//             <th>Item</th>
-//             <th>Price</th>
-//             <th>Quantity</th>
-//             <th>Total</th>
-//           </tr>
-//         </thead>
-//         <tbody>
-//           {cartItems.map((item) => (
-//             <tr key={item.id}>
-//               <td>{item.name}</td>
-//               <td>Rs {item.price}</td>
-//               <td>{item.quantity} kg</td>
-//               <td>Rs {item.price * item.quantity}</td>
-//             </tr>
-//           ))}
-//         </tbody>
-//       </table>
-//       <p>
-//         Total: Rs{" "}
-//         {cartItems.reduce(
-//           (total, item) => total + item.price * item.quantity,
-//           0
-//         )}
-//       </p>
-//       {!orderConfirmed && (
-//         <div>
-//           <form>
-//             <label htmlFor="name">Name:</label>
-//             <input
-//               type="text"
-//               id="name"
-//               value={name}
-//               onChange={(e) => setName(e.target.value)}
-//             />
-//             <label htmlFor="email">Email:</label>
-//             <input
-//               type="email"
-//               id="email"
-//               value={email}
-//               onChange={(e) => setEmail(e.target.value)}
-//             />
-//             <label htmlFor="phone">Phone:</label>
-//             <input
-//               type="tel"
-//               id="phone"
-//               value={phone}
-//               onChange={(e) => setPhone(e.target.value)}
-//             />
-//             <label htmlFor="address">Address:</label>
-//             <textarea
-//               id="address"
-//               value={address}
-//               onChange={(e) => setAddress(e.target.value)}
-//             ></textarea>
-//             <label htmlFor="paymentMethod">Payment Method:</label>
-// <select
-//   id="paymentMethod"
-//   value={paymentMethod}
-//   onChange={(e) => setPaymentMethod(e.target.value)}
-// >
-//   <option value="">--Select Payment Method--</option>
-//   <option value="cash">Cash</option>
-//   <option value="card">Card</option>
-// </select>
-// <button type="button" onClick={handleConfirmOrder}>
-//   Confirm Order
-// </button>
-// <button type="button" onClick={handleDeclineOrder}>
-//   Decline Order
-// </button>
-//     </form>
-//   )}
-//   {orderConfirmed && (
-//     <div>
-//       <p>Your order has been confirmed!</p>
-//       <p>Thank you for shopping with us.</p>
-//     </div>
-//   )}
-// </div>
-//   )
-  
-// </div>
-  
-// }
-
-// export default Summary;
-
-
-
-
-import React, { useState, useEffect } from 'react';
-
+import React, { useState, useEffect } from 'react'
 import {useNavigate, useParams, useLocation } from "react-router-dom";
 import axios from "axios";
 import "./Summary.css";
 
-import { createOrder } from '../api/CrateOrder';
-
-import { v4 as uuidv4 } from 'uuid';
-
-
 const SummaryPage = () => {
-  const [myOrderId, setMyOrderId] = useState(null);
-
+const [myOrderId, setMyOrderId] = useState(null);
   const [cartItemsWithDetails, setCartItemsWithDetails] = useState([]);
   const { customerName } = useParams();
   const location = useLocation();
@@ -273,81 +39,28 @@ const SummaryPage = () => {
   }, [cartItems]);
 
 
-
-
-
-  // const handleConfirmOrder = async () => {
-  //   const orderData = {
-  //     name,
-  //     email,
-  //     phone,
-  //     address,
-  //     paymentMethod,
-  //     items: cartItemsWithDetails,
-  //   };
-  
-  //   try {
-  //     // Create the order
-  //     await createOrder(orderData);
-  
-  //     // Insert cart items into the cartitems table
-  //     const orderId = uuidv4();
-  //     const cartItemsData = cartItemsWithDetails.map((item) => ({
-  //       order_id: orderId,
-  //       item_name: item.name,
-  //       item_price: item.price,
-  //       quantity: item.quantity,
-  //     }));
-  //     await axios.post('http://localhost:3001/cartitems', cartItemsData);
-  
-  //     // Clear the cart items from the local storage
-  //     localStorage.removeItem('cartItems');
-  
-  //     // Set the order confirmation state to true
-  //     setOrderConfirmed(true);
-  
-  //     // Redirect to homepage after 2 seconds
-  //     setTimeout(() => {
-  //       history('/');
-  //     }, 2000);
-  //   } catch (error) {
-  //     console.error(error);
-  //   }
-  // };
-
-
   const handleConfirmOrder = async () => {
-   
-   
-    const items = props.items.map(item => {
+    const items = cartItemsWithDetails.map(item => {
       return {
         item_name: item.name,
         item_price: item.price,
         quantity: item.quantity,
       };
     });
-   
+  
     const orderData = {
-      name,
-      email,
-      phone,
-      address,
-      paymentMethod,
-      items: cartItemsWithDetails,
+      name: '',
+      email: '',
+      phone: '',
+      address: '',
+      paymentMethod: '',
+      items,
     };
   
-    axios.post('/orders', orderData)
-    .then(response => {
-      // Handle successful response
+    try {
+      const response = await axios.post('/orders', orderData);
       console.log(response.data);
-    })
-    .catch(error => {
-      // Handle error
-      console.log(error);
-    });
-};
-      
-     
+  
       // Clear the cart items from the local storage
       localStorage.removeItem('cartItems');
   
@@ -358,7 +71,10 @@ const SummaryPage = () => {
       setTimeout(() => {
         history.push('/');
       }, 2000);
- 
+    } catch (error) {
+      console.log(error);
+    }
+  };
   
 
       
@@ -386,10 +102,14 @@ const SummaryPage = () => {
           <option value="paypal">Fonepay</option>
           <option value="paypal">Esewa</option>
         </select>
+
         <button onClick={() => handleConfirmOrder(myOrderId)}>Confirm Order</button>
 {orderConfirmed && <p style={{ color: 'red' }}>Order confirmed! Redirecting to homepage...</p>}
 
-       
+
+        <button onClick={handleConfirmOrder}>Confirm Order</button>
+        {orderConfirmed && <p style={{ color: 'red' }}>Order confirmed! Redirecting to homepage...</p>}
+
       </div>
     </div>
   );

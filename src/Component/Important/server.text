@@ -1,160 +1,10 @@
 
-
-// const express = require('express');
-// const cors = require('cors');
-// const { v4: uuidv4 } = require('uuid');
-// const mysql = require('mysql2');
-// const nodemailer = require('nodemailer');
-// const app = express();
-// const pool = mysql.createPool({
-//   host: 'localhost',
-//   user: 'root',
-//   password: 'Rudrakharel',
-//   database: 'subashdb',
-//   waitForConnections: true,
-//   connectionLimit: 10,
-//   queueLimit: 0
-// });
-// app.use(express.static('public'));
-// app.use(cors());
-// app.use(express.json());
-
-// // handle login request
-// app.post('/login', (req, res) => {
-//   const { email, password } = req.body;
-
-//   // Check if a user with the provided email and password exists in the 'users' table
-//   pool.query(
-//     'SELECT * FROM users WHERE email = ? AND password = ?',
-//     [email, password],
-//     (error, results, fields) => {
-//       if (error) {
-//         console.error(error);
-//         res.status(500).send('Error selecting user from database');
-//       } else if (results.length === 0) {
-//         res.status(401).json({ success: false, message: 'Incorrect email or password' });
-//       } else {
-//         const user = results[0];
-//         console.log(user);
-//         res.status(200).json({ success: true, name: user.name });
-//       }
-//     }
-//   );
-// });
-
-// app.post('/users', (req, res) => {
-//   const { name, email, password } = req.body;
-//   const newUser = { id: uuidv4(), name, email, password };
-  
-//   // Insert the new user into the 'users' table
-//   pool.query(
-//     'INSERT INTO users (id, name, email, password) VALUES (?, ?, ?, ?)',
-//     [newUser.id, newUser.name, newUser.email, newUser.password],
-//     (error, results, fields) => {
-//       if (error) {
-//         console.error(error);
-//         res.status(500).send('Error inserting user into database');
-//       } else {
-//         console.log(results);
-//         res.status(201).json(newUser);
-//       }
-//     }
-//   );
-// });
-
-// app.get('/users', (req, res) => {
-//   // Select all users from the 'users' table
-//   pool.query(
-//     'SELECT * FROM users',
-//     (error, results, fields) => {
-//       if (error) {
-//         console.error(error);
-//         res.status(500).send('Error selecting users from database');
-//       } else {
-//         console.log(results);
-//         res.status(200).json(results);
-//       }
-//     }
-//   );
-// });
-
-// app.get('/', (req, res) => {
-//   res.send('12345');
-// });
-
-
-// app.post('/orders', (req, res) => {
-//   const order = {
-//     orderID: 'ORD001',
-//     customerName: 'John Doe',
-//     orderDate: '2023-05-01 12:00:00',
-//     products: 'Product 1, Product 2',
-//     unit: '1, 2',
-//     rate: '10, 20',
-//     totalPrice: '30'
-//   };
-
-//   pool.query('INSERT INTO `order` SET ?', order, (error, results) => {
-//     if (error) {
-//       console.error(error);
-//       res.status(500).send('Error inserting order into database');
-//     } else {
-//       console.log('Order inserted into the database with ID:', results.insertId);
-//       const transporter = nodemailer.createTransport({
-//         service: 'gmail',
-//         auth: {
-//           user: 'Ecoaap@gmail.com',
-//           pass: 'your_password_here'
-//         }
-//       });
-
-//       const customerMailOptions = {
-//         from: 'Ecoaap@gmail.com',
-//         to: email,
-//         subject: 'Order placed successfully',
-//         text: `Dear ${name}, your order (${product}) has been placed successfully. Thank you for shopping with us!`
-//       };
-
-//       const ownerMailOptions = {
-//         from: 'Ecoaap@gmail.com',
-//         to: 'info@kishan.com',
-//         subject: 'New order received',
-//         text: `Dear owner, a new order (${product}) has been placed by ${name}. Please check your dashboard for more details.`
-//       };
-
-//       transporter.sendMail(customerMailOptions, (error, info) => {
-//         if (error) {
-//           console.error(error);
-//           res.status(500).send('Error sending email notification to customer');
-//         } else {
-//           console.log('Email sent to customer:', info.response);
-//         }
-//       });
-
-//       transporter.sendMail(ownerMailOptions, (error, info) => {
-//         if (error) {
-//           console.error(error);
-//           res.status(500).send('Error sending email notification to owner');
-//         } else {
-//           console.log('Email sent to owner:', info.response);
-//           res.status(201).json({ success: true, message: 'Order inserted and email sent' });
-//         }
-//       });
-//     }
-//   });
-// });
-
-// app.listen(3001, () => {
-//   console.log('Server running on port 3001');
-// });
-
-
-
 const express = require('express');
 const cors = require('cors');
-const { v4: uuidv4 } = require('uuid');
+
 const mysql = require('mysql2');
-const nodemailer = require('nodemailer');
+
+
 const bodyParser = require('body-parser');
 const app = express();
 
@@ -199,18 +49,21 @@ app.post('/login', (req, res) => {
   );
 });
 
+
+// Routes
 app.post('/users', async (req, res) => {
   const { name, email, password } = req.body;
-  const newUser = { id: uuidv4(), name, email, password };
-  
+
   try {
     // Insert the new user into the 'users' table
-    const [result] = await pool.promise().execute(
-      'INSERT INTO users (id, name, email, password) VALUES (?, ?, ?, ?)',
-      [newUser.id, newUser.name, newUser.email, newUser.password]
+    const [result] = await pool.promise().query(
+      'INSERT INTO users (name, email, password) VALUES (?, ?, ?)',
+      [name, email, password]
     );
 
-    console.log(result);
+    const newUser = { id: result.insertId, name, email, password };
+
+    console.log(newUser);
     res.status(201).json(newUser);
   } catch (error) {
     console.error(error);
@@ -276,16 +129,90 @@ app.post('/orders', async (req, res) => {
 });
 
 // Retrieve list of orders
-app.get('/orders', async (req, res) => {
+app.get('/orders', (req, res) => {
+  pool.query('SELECT * FROM orders', (err, results) => {
+    if (err) {
+      console.error(err);
+      res.status(500).json({ error: 'Failed to retrieve orders' });
+    } else {
+      console.log(results);
+      res.status(200).json(results);
+    }
+  });
+});
+
+
+// Insert cart item into cartitems table
+app.post('/cartitems', async (req, res) => {
+  const { order_id, items } = req.body;
+
   try {
-    const result = await pool.query('SELECT * FROM orders');
-    res.json(result);
+    const values = items.map(({ item_name, item_price, quantity }) => [
+      order_id,
+      item_name,
+      item_price,
+      quantity,
+    ]);
+    await pool.query(
+      'INSERT INTO cartitems (order_id, item_name, item_price, quantity) VALUES ?',
+      [values]
+    );
+    res.json({ message: 'Cart items inserted successfully' });
   } catch (error) {
     console.error(error);
-    res.status(500).json({ error: 'Failed to retrieve orders' });
+    res.status(500).json({ error: 'Failed to insert cart items' });
   }
 });
 
+// Retrieve cart items for a specific order
+app.get('/cartitems/:orderId', async (req, res) => {
+  const { orderId } = req.params;
+
+  try {
+    const result = await pool.query(
+      'SELECT * FROM cartitems WHERE order_id = ?',
+      [orderId]
+    );
+    res.status(200).json(result);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: 'Failed to retrieve cart items' });
+  }
+});
+
+
+
+
+// API Endpoint to Insert Cart Items
+app.post('/cartitems', (req, res) => {
+  const { order_id, items } = req.body;
+  const sql = 'INSERT INTO cartitems (order_id, item_name, item_price, quantity) VALUES ?';
+  const values = items.map((item) => [order_id, item.item_name, item.item_price, item.quantity]);
+
+  pool.getConnection((err, connection) => {
+    if (err) throw err;
+    connection.query(sql, [values], (error, results) => {
+      connection.release();
+      if (error) throw error;
+      res.status(201).send(`Cart items inserted for order ID: ${order_id}`);
+    });
+  });
+});
+
+// API Endpoint to Retrieve Cart Items for an Order
+app.get('/cartitems/:order_id', (req, res) => {
+  const order_id = req.params.order_id;
+  const sql = 'SELECT * FROM cartitems WHERE order_id = ?';
+
+  pool.getConnection((err, connection) => {
+    if (err) throw err;
+    connection.query(sql, [order_id], (error, results) => {
+      connection.release();
+      if (error) throw error;
+      res.status(200).json(results);
+    });
+  });
+});
 
 
 
@@ -301,5 +228,4 @@ app.listen(PORT, () => {
   app.listen(3001, () => {
   console.log('Server running on port 3001');
   });
-  
   

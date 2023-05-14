@@ -2,11 +2,48 @@
 
 /* terms-and-conditions.css */
 
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+h1 {
+  font-size: 36px;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+p {
+  font-size: 18px;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
 
 
 ul {
   list-style: none;
   padding: 0;
   margin: 0 0 20px 0;
+}
+
+
+li:before {
+  content: "•";
+  margin-right: 10px;
+}
+
+@media only screen and (max-width: 768px) {
+  .container {
+    padding: 10px;
+  }
+
+  h1 {
+    font-size: 28px;
+  }
+
+  p {
+    font-size: 16px;
+  }
 }
 

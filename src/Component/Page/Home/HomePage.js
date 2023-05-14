@@ -94,7 +94,7 @@ function Homepage() {
       <div class="container">
 
   <div class="contentHero">
-    <h1>Kishan Ko Bazar</h1>
+    <h1>Company Name</h1>
     <p class="text">A selection of fresh, seasonal produce delivered straight to your door.</p>
     <p class="text">
       Nepali Mato Nepali <span class="highlight">Utpadan</span>, 

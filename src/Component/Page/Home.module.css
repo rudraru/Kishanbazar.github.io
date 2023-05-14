@@ -1,0 +1,280 @@
+/* Home.module.css */
+
+.banner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 500px;
+  background-color: #f5f5f5;
+}
+
+.slogan {
+  font-size: 2rem;
+  text-align: center;
+  margin: 0 0 1rem;
+}
+
+.cta {
+  margin-top: 1rem;
+}
+
+.link {
+  text-decoration: none;
+  color: #fff;
+  background-color: #007bff;
+  border: none;
+  border-radius: 4px;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.link:hover {
+  background-color: #6c757d;
+}
+
+.whyChooseUs {
+  margin-top: 2rem;
+}
+
+
+
+
+/* Full page banner */
+.banner {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+/* Full page "Why Choose Us" section */
+.whyChooseUs {
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+/* Style for the banner slogan */
+.banner .slogan {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+/* Style for the banner CTA button */
+.banner button {
+  padding: 1rem 2rem;
+  font-size: 1.5rem;
+  background-color: #28a745;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+
+
+
+/* Shop by Category */
+.categories {
+  background-color: #e5f5f9;
+  padding: 1rem;
+  text-align: center;
+  border: 2px solid #e4e00d ;
+}
+
+.categories h2 {
+  font-size: 3rem;
+  margin-bottom: 2rem;
+}
+
+.categories ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.categories li {
+  margin: 1rem;
+  width: 30%;
+  background-color: white;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: all 0.2s ease-in-out;
+}
+
+.categories li:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.categories a {
+  display: block;
+  padding: 2rem;
+  text-align: center;
+  font-size: 2rem;
+  color: #333;
+  text-decoration: none;
+}
+
+.categories a:hover {
+  color: #e8f8ef;
+}
+
+
+
+
+
+
+
+
+
+
+header.banner {
+  border: 2px solid #e4e00d ;
+
+  padding: 0px;
+  /* background: linear-gradient(to right, #f0f0f0 50% , #ffffff 50%); */
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.whyChooseUs {
+  background-color: #c97373;
+
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 60px;
+}
+
+.whyChooseUs h2 {
+  font-size: 36px;
+  font-weight: bold;
+  margin-bottom: 30px;
+  text-align: center;
+  color: #220909;
+  text-shadow: 2px 2px #000;
+}
+
+.whyChooseUs ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.whyChooseUs li {
+  border: 2px solid #160808;
+  border-radius: 10px;
+  box-shadow: 2px 2px #000;
+  color: #05030365;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 20px;
+  padding: 30px;
+  position: relative;
+  transition: all 0.3s ease-in-out;
+  width: 300px;
+}
+
+.whyChooseUs li:before {
+  /* border-top: 2px dashed #fff; */
+  content: "";
+  height: 1px;
+  left: 0;
+  position: absolute;
+  top: 50%;
+  width: 100%;
+}
+
+.whyChooseUs li:hover {
+  background-color: #fff;
+  color: #000;
+  box-shadow: 2px 2px #fff;
+}
+
+/* .whyChooseUs li:hover:before {
+  border-top: 2px dashed #000;
+} */
+.whyChooseUsTitle {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+}
+
+.whyChooseUsChart {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.chartItem {
+  width: calc(33.33% - 1rem);
+  background-color: #f5f5f5;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  box-sizing: border-box;
+  border: 1px solid #ddd;
+  border-radius: 0.25rem;
+}
+
+.chartItem:hover {
+  background-color: #fff;
+  border-color: #bbb;
+}
+
+.chartItemTitle {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.chartItemBar {
+  background-color: #ddd;
+  height: 1rem;
+  border-radius: 0.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.chartItemBarFilled {
+  background-color: #4caf50;
+  height: 1rem;
+  border-radius: 0.25rem;
+}
+
+.chartItemPercentage {
+  font-size: 0.8rem;
+  color: #888;
+}
