@@ -71,22 +71,22 @@
 
 
 import React from 'react';
+
 import { Link } from 'react-router-dom';
 import styles from './Home.css';
 // import Category from '../Image/Category.jpg'
 import why from '../../Image/whyuss.jpg'
 import homefrist from '../../Image/Flw.png'
 import Aft from '../../Image/Category.jpg'
-import FreshP from '../../Image/Veglady.png'
+import FreshP from '../../Image/red-hot-pepper.jpg'
 import shopnow from '../../Image/VeganShop.png'
+import VideoBackground from '../Videobackground';
 
 function Homepage() {
+
+  
  
   return (
-
-
-
-
       <main>
       
       <header className={`${styles.banner} banner`} style={{ backgroundImage: `url(${homefrist})`  }} >
@@ -94,42 +94,34 @@ function Homepage() {
       <div class="container">
 
   <div class="contentHero">
-    <h1>Company Name</h1>
+    <h1>"किसान को बजार" </h1>
     <p class="text">A selection of fresh, seasonal produce delivered straight to your door.</p>
     <p class="text">
-      Nepali Mato Nepali <span class="highlight">Utpadan</span>, 
+     "Nepali Mato, Nepali <span class="highlight">उत्पादन </span>, 
       Swasta Tarkari, 
-      Swasta <span class="highlight">Jiwan</span>.
+      Swasta <span class="highlight">जीवन"</span>.
     </p>
   </div>
 </div>
 
       </header>
-
-
-     <div className={`${styles.Produce} Produce`} style={{ backgroundImage: `url(${FreshP})`  }}>
-
-
-
-     <div class="container1">
-  <h2>Fresh Produce</h2>
+{/* Second Banner */}
+      <header className={`${styles.banner2} banner2`} style={{ backgroundImage: `url(${FreshP})`  }}>
+      <div class="container1">
+  <h2 className="animate">Exciting news! We now grow fresh produce ourselves in tunnels.!</h2>
   <ul>
-    <li><span class="check"></span>Cauliflower</li>
-    <li><span class="check"></span>Tomato</li>
-    <li><span class="check"></span>Lettuce</li>
-    {/* <!-- Add more items as needed --> */}
+    <li><span className="check"></span>We assure consumers that our produce is grown with the highest level of purity and organic standards.</li>
+    <li><span className="check"></span>Our farming practices strictly avoid the use of chemical fertilizers and pesticides, ensuring consumer trust.</li>
+    <li><span className="check"></span>By employing natural remedies in our production projects, we minimize the risk of harmful chemical residues, thereby safeguarding consumers' well-being.</li>
+ 
+    <li><span className="check"></span>We are committed to the absence of chemical contaminants and ensuring the integrity and purity of our products.</li>
+    <li><span className="check"></span>Our production methods and quality standards provide confidence that our produce is genuinely organic and trustworthy.</li>
   </ul>
 </div>
+      </header>
 
 
-
-     </div>
-
-
-
-
-
-     <div className={`${styles.Produce} Produce`} style={{ backgroundImage: `url(${shopnow})`  }}>
+     <div className={`${styles.banner} banner`} style={{ backgroundImage: `url(${shopnow})`  }}>
 
 <section className={`${styles.shopbtn } shopbtn`}>
   
@@ -177,15 +169,17 @@ function Homepage() {
 </section>
 
 
-      <section className={styles.categories }style={{ backgroundImage: `url(${Aft})` }}>
-        <h2>Shop by Category</h2>
-        <ul>
-          <li><Link to='/vegetables/fresh' className={styles.link}>Fresh Vegetables</Link></li>
-          <li><Link to='/vegetables/organic' className={styles.link}>Leafy Items</Link></li>
-          <li><Link to='/vegetables/imported' className={styles.link}>Sand Items</Link></li>
-        </ul>
-      </section> 
+<div className="video-background">
+  <VideoBackground/>
+</div>
+
+
+
     </main>
+
+
+
+
    
   );
 }

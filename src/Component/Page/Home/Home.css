@@ -3,37 +3,80 @@
 
 
 
-.banner {
+.banner2{
+
+  height: 115vh;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 500px;
-  background-color: #f5f5f500;
+
+width: 900px;
+text-align: end;
+justify-content: end;
+  background-repeat: no-repeat;
+  background-size: cover;
+margin-left: 50%;
+}
+
+
+
+
+
+
+
+.container1 {
+  display:inline-block;
+  position: relative;
+  text-align: center;
+  margin: 15%;
+  padding: 4%;
+  margin-right: 0%;
+  perspective: 1000px;
+  border: 1px solid #2e2828;
+z-index: 999;
+margin-left: -90%;
+margin-right: 100%;
+height: fit-content;
+width: max-content;
+
+}
+
+
+
+
+
+h2 {
+  font-size: 40px;
+  font-weight: bold;
+  margin-bottom: 21px;
+
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+li {
+  font-size: 25px;
+  line-height: 1.5;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.container1 li:hover {
+  background-color: #ddd5d546;
+  cursor:pointer;
+  border: 2px solid #b7db34;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+.container1 li:hover span.check {
+  opacity: 1;
+  transform: scale(1);
   
 
-
 }
-
-.Produce{
-
-  height: 100vh;
-
-
-
-
-
-  background-size: cover;
-  background-repeat: no-repeat;
-}
-
-
-.shopbtn{
-  text-decoration: none;
-
-
-}
-
 
 
 
@@ -41,7 +84,7 @@
 
   color: #e9d3d3;
 
-
+  text-decoration: none;
 
 display: inline-block;
 position: absolute;
@@ -55,10 +98,10 @@ margin-left: 72%;
 }
 
 
+
 .whyChooseUs {
   margin-top: 2rem;
 }
-
 
 /* CSS */
 .shopbtn {
@@ -97,11 +140,10 @@ margin-left: 72%;
 
 /* Full page banner */
 .banner {
-  height: 101vh;
+  height: 100vh;
   display: flex;
   flex-direction: column;
-
-
+margin-top: -4%;
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -110,9 +152,9 @@ margin-left: 72%;
 .container {
   color: #050202;
   display: flex;
- margin-bottom: 5%;
-margin-left: 50%;
-  height: 100vh;
+
+margin-left: 55%;
+  height: 50vh;
 }
 
 .contentHero {
@@ -365,57 +407,4 @@ header.banner {
 .chartItemPercentage {
   font-size: 0.8rem;
   color: #888;
-}
-
-
-
-.container1 {
-  max-width: 600px;
-  margin: 0 auto;
-  padding: 20px;
-  text-align: center;
-  border-bottom: 2px solid #ccc;
-}
-
-h2 {
-  font-size: 24px;
-  font-weight: bold;
-  margin-bottom: 10px;
-}
-
-ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  text-align: left;
-}
-
-li {
-  margin-bottom: 5px;
-  position: relative;
-  padding-left: 30px;
-}
-
-.check {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 20px;
-  height: 20px;
-  background-color: green;
-  border-radius: 50%;
-}
-
-li:before {
-  content: '';
-  position: absolute;
-  top: 10px;
-  left: 25px;
-  width: 1px;
-  height: 100%;
-  background-color: #ccc;
-}
-
-li:first-child:before {
-  display: none;
 }

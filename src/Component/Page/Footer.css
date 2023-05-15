@@ -1,117 +1,58 @@
-
-footer {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: flex-start;
-  padding: 100px;
-  background-color: #f5f5f5;
-}
-
-
-.footer__useful-links {
-
-  justify-content: space-between;
-margin-top: 10px;
-
-}
-
-.f-ul{
-  display: flex;
-  justify-content: space-between;
-  width: 115%;
-	float: left;
-  color: #1c1c1c;
-	font-size: 14px;
-	line-height: 38px;
-}
-
-.footer__useful-links a {
-  text-decoration: none;
-}
-
-.footer__left {
-  width: 30%;
-  float: center;
-;
-}
-
-
-.footer__about__logo {
-  margin-bottom: 200px;
-}
-
-.footer__useful-links ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.footer__useful-links h6 {
-  margin-bottom: 10px;
-}
-
-
-.footer__useful-links h6 {
-  margin-bottom: 50px;
-  text-transform: uppercase;
-  font-weight: 700;
-  font-size: 16px;
-  color: #333;
-}
-
-
-
-/* Style for newsletter section */
-.newsletter {
-  background-color: #f7f7f7;
-  padding: 30px 0;
-}
-
-.newsletter h6 {
-  font-size: 20px;
-  margin-bottom: 10px;
-}
-
-.newsletter p {
-  margin-bottom: 20px;
-  font-size: 14px;
-}
-
-.newsletter form {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 20px;
-}
-
-.newsletter input[type="text"] {
-  padding: 10px 20px;
-  width: 60%;
-  border: none;
-  border-radius: 30px;
-  margin-right: 10px;
-  font-size: 14px;
-  outline: none;
-}
-
-
-
-
-
-.newsletter div {
-  display: flex;
-  justify-content: center;
-}
-
-.icon {
-  display: inline-block;
-  margin: 0 10px;
-  font-size: 24px;
-  color: #333;
-  transition: all 0.3s ease-in-out;
-}
-
-
-
-
+body{
+  margin:0;
+  overflow-x:hidden;
+  }
+  
+  .footer{
+  background:#ddc6cc34;
+  padding:30px 0px;
+  font-family: 'Play', sans-serif;
+  text-align:center;
+  }
+  
+  .footer .row{
+  width:100%;
+  margin:1% 0%;
+  padding:0.6% 0%;
+  color:gray;
+  font-size:0.8em;
+  }
+  
+  .footer .row a{
+  text-decoration:none;
+  color:gray;
+  transition:0.5s;
+  }
+  
+  .footer .row a:hover{
+  color:#0a0707;
+  }
+  
+  .footer .row ul{
+  width:100%;
+  }
+  
+  .footer .row ul li{
+  display:inline-block;
+  margin:0px 30px;
+  }
+  
+  .footer .row a i{
+  font-size:2em;
+  margin:0% 1%;
+  }
+  
+  @media (max-width:720px){
+  .footer{
+  text-align:left;
+  padding:5%;
+  }
+  .footer .row ul li{
+  display:block;
+  margin:10px 0px;
+  text-align:left;
+  }
+  .footer .row a i{
+  margin:0% 3%;
+  }
+  }

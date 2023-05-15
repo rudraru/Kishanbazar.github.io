@@ -3,14 +3,11 @@ import { FaInfoCircle, FaBlog,FaUser,FaQuestionCircle, FaFileContract, FaTruck, 
 import { Link } from 'react-router-dom';
 import Fruits from '../Page/Card';
 import './Navigation.css';
-
 const Navigation = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [searchResults, setSearchResults] = useState([]);
   const [showMore, setShowMore] = useState(false);
   const searchRef = useRef(null);
-
-
   const handleSearch = (event) => {
     setSearchTerm(event.target.value);
   };
@@ -81,10 +78,7 @@ const Navigation = () => {
                   <FaInfoCircle className="nav-icon" />
                   About Us
                   </Link>
-                  {/* <Link to="/contactus" className="nav-link">
-                  <FaPhoneSquareAlt className="nav-icon" />
-                  Contact Us
-                  </Link> */}
+              
                   <a href="https://blog.fruitmart.com" className="nav-link">
                   <FaBlog className="nav-icon" />
                   Blog
@@ -114,10 +108,7 @@ const Navigation = () => {
                 X
               </button>
             )}
-            {/* <FaSearch
-              className="search-icon"
-              onClick={() => history(`/search/${searchTerm}`)}
-            /> */}
+         
             {searchTerm.length > 1 && (
               <div className="search-results">
                 {renderSearchResults()}
