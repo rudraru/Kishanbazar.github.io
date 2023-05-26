@@ -1,13 +1,16 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { FaInfoCircle, FaBlog,FaUser,FaQuestionCircle, FaFileContract, FaTruck, FaPhone } from 'react-icons/fa';
+import { FaInfoCircle, FaBlog, FaUser, FaQuestionCircle, FaFileContract, FaTruck, FaPhone } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import Fruits from '../Page/Card';
 import './Navigation.css';
+
 const Navigation = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [searchResults, setSearchResults] = useState([]);
   const [showMore, setShowMore] = useState(false);
+  const [darkMode, setDarkMode] = useState(false);
   const searchRef = useRef(null);
+
   const handleSearch = (event) => {
     setSearchTerm(event.target.value);
   };
@@ -33,7 +36,6 @@ const Navigation = () => {
   const handleShowMore = () => {
     setShowMore(true);
   };
-
   const renderSearchResults = () => {
     const MAX_RESULTS = 7;
     let results = searchResults.slice(0, MAX_RESULTS);
@@ -59,6 +61,18 @@ const Navigation = () => {
     ));
   };
 
+  const handleDarkModeToggle = () => {
+    setDarkMode(!darkMode);
+  };
+
+  useEffect(() => {
+    if (darkMode) {
+      document.body.classList.add('dark-mode');
+    } else {
+      document.body.classList.remove('dark-mode');
+    }
+  }, [darkMode]);
+
   return (
     <nav className="navbar" onClick={handleClickOutside}>
       <div className="nav-center">
@@ -75,31 +89,30 @@ const Navigation = () => {
           </Link>
         </div>
         <Link to="/aboutus/us" className="nav-link">
-                  <FaInfoCircle className="nav-icon" />
-                  About Us
-                  </Link>
-              
-                  <a href="https://blog.fruitmart.com" className="nav-link">
-                  <FaBlog className="nav-icon" />
-                  Blog
-                  </a>
-                  <div className="nav-link">
-        
+          <FaInfoCircle className="nav-icon" />
+          About Us
+        </Link>
+
+        <a href="https://blog.fruitmart.com" className="nav-link">
+          <FaBlog className="nav-icon" />
+          Blog
+        </a>
+        <div className="nav-link">
           <FaUser className="nav-icon" />
-           Customer_service
-      <ul className="customer-service-help-submenu">
-        <li><Link to="#"><FaQuestionCircle /> FAQs</Link></li>
-        <li><Link to="/Trmsandcdn"><FaFileContract /> Terms and Conditions</Link></li>
-        <li><Link to="#"><FaTruck /> Delivery Policy / Information</Link></li>
-        <li><Link to="/Contactus"><FaPhone /> Contact Us</Link></li>
-      </ul>
+          Customer_service
+          <ul className="customer-service-help-submenu">
+            <li><Link to="#"><FaQuestionCircle /> FAQs</Link></li>
+            <li><Link to="/Trmsandcdn"><FaFileContract /> Terms and Conditions</Link></li>
+            <li><Link to="#"><FaTruck /> Delivery Policy / Information</Link></li>
+            <li><Link to="/Contactus"><FaPhone /> Contact Us</Link></li>
+          </ul>
         </div>
- 
+
         <div className="nav-links">
           <div className="search-container" ref={searchRef}>
             <input
               type="text"
-              placeholder="Serach Fruits"
+              placeholder="Search Fruits"
               value={searchTerm}
               onChange={handleSearch}
             />
@@ -108,7 +121,7 @@ const Navigation = () => {
                 X
               </button>
             )}
-         
+
             {searchTerm.length > 1 && (
               <div className="search-results">
                 {renderSearchResults()}
@@ -122,12 +135,14 @@ const Navigation = () => {
               </div>
             )}
           </div>
+        </div>
 
-                 
-                  </div>
-                  </div>
-                  </nav>
-                  );
-                  };
-                  
-                  export default Navigation;
+        <button  type='none' className="dark-mode-toggle" onClick={handleDarkModeToggle}>
+          {darkMode ? 'Light Mode' : 'Dark Mode'}
+        </button>
+      </div>
+    </nav>
+  );
+};
+
+export default Navigation;

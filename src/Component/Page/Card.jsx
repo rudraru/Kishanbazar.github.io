@@ -6,17 +6,10 @@ const fruits = [
     image: 'https://tse2.mm.bing.net/th?id=OIP.5bLEGgrUJw9PXpPA3ReYBwHaGU&pid=Api&P=0',
     price: 100,
     benefits: 'Rich in antioxidants and dietary fiber, promotes heart health',
+viewedproducts:'yes' 
   },
 
-  {
-    id: 2,
-    name: 'Banana',
-    category: 'Fruit',
-    image: 'https://images.unsplash.com/photo-1519681393784-d120267933ba',
-    price: 50,
-    benefits: 'Rich in potassium, regulates blood pressure, aids digestion',
-  },
-  
+
   {
     id: 3,
     name: 'Orange',
@@ -156,11 +149,86 @@ const fruits = [
   {
     id: 20,
     name: 'Plum',
-    category: 'Fruit',
+    category: 'Vegetable',
     image: 'https://images.unsplash.com/photo-1592218398815-5ef7b5da52a1',
     price: 90,
     benefits: 'Rich in dietary fiber, promotes digestion, reduces inflammation',
   },
+  {
+    id: 21,
+    name: 'Carrot',
+    category: 'Vegetable',
+    image: 'https://example.com/carrot-image.jpg',
+    price: 1.99,
+    benefits: 'Rich in beta-carotene, promotes healthy vision, boosts immune system',
+  },
+  {
+    id: 22,
+    name: 'Broccoli',
+    category: 'Vegetable',
+    image: 'https://example.com/broccoli-image.jpg',
+    price: 2.49,
+    benefits: 'High in fiber, vitamins, and minerals, supports digestion, strengthens bones',
+  },
+  {
+    id: 23,
+    name: 'Spinach',
+    category: 'Vegetable',
+    image: 'https://example.com/spinach-image.jpg',
+    price: 1.79,
+    benefits: 'Packed with iron and antioxidants, promotes healthy skin, supports brain health',
+  },
+  // Add more vegetables here following the same format
+  {
+    id: 38,
+    name: 'Zucchini',
+    category: 'Vegetable',
+    image: 'https://example.com/zucchini-image.jpg',
+    price: 1.49,
+    benefits: 'Low in calories, aids digestion, supports healthy metabolism',
+  },
+  {
+    id: 39,
+    name: 'Eggplant',
+    category: 'Vegetable',
+    image: 'https://example.com/eggplant-image.jpg',
+    price: 1.99,
+    benefits: 'High in antioxidants, supports heart health, aids in weight management',
+  },
+  {
+    id: 40,
+    name: 'Sweet Potato',
+    category: 'Vegetable',
+    image: 'https://example.com/sweet-potato-image.jpg',
+    price: 1.99,
+    benefits: 'Rich in beta-carotene, supports eye health, boosts immune system',
+  },
+  {
+    id: 41,
+    name: 'Cabbage',
+    category: 'Vegetable',
+    image: 'https://example.com/cabbage-image.jpg',
+    price: 1.59,
+    benefits: 'High in vitamins K and C, aids digestion, supports a healthy gut',
+  },
+  {
+    id: 42,
+    name: 'Asparagus',
+    category: 'Vegetable',
+    image: 'https://example.com/asparagus-image.jpg',
+    price: 2.49,
+    benefits: 'Detoxifying properties, supports healthy liver function, aids in weight loss',
+  },
+  {
+    id: 43,
+    name: 'Green Beans',
+    category: 'Vegetable',
+    image: 'https://example.com/green-beans-image.jpg',
+    price: 1.79,
+    benefits: 'Low in calories, high in vitamins and minerals, supports healthy digestion',
+  },
+
+
 ];
 
   export default fruits;

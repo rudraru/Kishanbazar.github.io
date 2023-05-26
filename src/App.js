@@ -40,7 +40,7 @@ function App() {
 
 <Route exact path="/fruits/:fruitId/:size" element={<FruitDetails/>} />
 <Route path='/Aboutus/tac' element={<TermsAndConditionsPage/>}/>
-<Route path='/Aboutus/us' element={<AboutUs/>}/>
+<Route path='/Aboutus' element={<AboutUs/>}/>
 
   <Route path='/Fruits' element={<FruitList/>}/>
   <Route path='/Contactus' element={<ContactUs/>}/>

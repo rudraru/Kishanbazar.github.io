@@ -203,3 +203,52 @@ padding: 0 2rem;
 .customer-service-help-submenu li a:hover {
   background-color: #0c03034f;
 }
+
+
+
+
+.dark-mode {
+  background-color: #1a1a1a;
+  color: #ffffff;
+}
+
+.dark-mode .logo-text {
+  color: #ffffff;
+}
+
+.dark-mode .nav-link {
+  color: #ffffff;
+}
+
+.dark-mode .nav-icon {
+  color: #ffffff;
+}
+
+.dark-mode .search-container input {
+  background-color: #333333;
+  color: #ffffff;
+}
+
+.dark-mode .search-container .clear-button {
+  color: #ffffff;
+}
+
+.dark-mode .search-results {
+  background-color: #333333;
+  color: #ffffff;
+}
+/* Navigation.css */
+
+.dark-mode-toggle {
+  background-color: #333;
+  color: #fff;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-left: 10%;
+}
+
+.dark-mode-toggle:hover {
+  background-color: #555;
+}

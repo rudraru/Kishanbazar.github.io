@@ -29,7 +29,7 @@ const Product = ({ product, handleAddToCart }) => {
       </div>
       <button onClick={() => handleAddToCart(product, quantity)}>
         <FaCartPlus />
-        Add
+        Add cart
       </button>
     </div>
   );
