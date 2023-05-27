@@ -24,15 +24,19 @@ import SummaryPage from './Component/Page/Summary';
 import Bcart from './Component/Page/Bcart';
 import TermsAndConditionsPage from './Component/Page/Tac';
 
+import Navigation from './Component/Page/Navigation'
+
 
 function App() {
   return (
     <>
-
+<Navigation/>
 
 <Routes>
+  
 <Route exact path="/" element={<Home/>} />
     <Route exact path="/login" element={<Login/>} />
+
   <Route path='/Signup' element={<Signup/>}/>
   <Route path='/SignIn' element={<Login/>}/> 
 <Route path='/fruits' element={<FruitList/>}/>
@@ -47,6 +51,8 @@ function App() {
   <Route path='/order-summary' element={<SummaryPage/>}/>
   <Route path='/Bcart' element={<Bcart/>}/>
   <Route path='/Trmsandcdn' element={<TermsAndConditionsPage/>}/>
+
+  
 </Routes> 
 
 <Footer/>

@@ -1,49 +1,90 @@
-
-
-/* terms-and-conditions.css */
-
-.container {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 20px;
-}
-
-h1 {
-  font-size: 36px;
+.fruit-details {
   text-align: center;
-  margin-bottom: 30px;
 }
 
-p {
-  font-size: 18px;
-  line-height: 1.5;
+.fruit-details__title {
+  font-size: 32px;
   margin-bottom: 20px;
+  color: #333;
 }
 
-
-ul {
-  list-style: none;
-  padding: 0;
-  margin: 0 0 20px 0;
+.fruit-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 40px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background-color: #fff;
+  max-width: 400px;
+  margin: 0 auto;
 }
 
-
-li:before {
-  content: "•";
-  margin-right: 10px;
+.fruit-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
-@media only screen and (max-width: 768px) {
-  .container {
-    padding: 10px;
-  }
-
-  h1 {
-    font-size: 28px;
-  }
-
-  p {
-    font-size: 16px;
-  }
+.fruit-card__image {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 30%;
+  margin-bottom: 20px;
+  border: 3px solid transparent;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  animation: rainbowBorder 5s linear infinite;
 }
 
+@keyframes rainbowBorder {
+  0% { border-color: #ff0000; }
+  14% { border-color: #ff7f00; }
+  29% { border-color: #ffff00; }
+  43% { border-color: #00ff00; }
+
+
+  86% { border-color: #8f00ff; }
+  100% { border-color: #ff0000; }
+}
+
+.fruit-card__name {
+  font-size: 24px;
+  margin-bottom: 10px;
+  color: #333;
+  animation: rainbowText 5s linear infinite;
+}
+
+.fruit-card__benefits {
+  font-size: 16px;
+  margin-bottom: 20px;
+  color: #666;
+  text-align: center;
+}
+
+.fruit-card__price {
+  font-size: 20px;
+  color: #333;
+}
+
+.errloading {
+  font-size: 39px;
+  text-align: center;
+;
+  margin-bottom: 415px;
+  margin-top: 10%;
+  animation: rainbowText 5s linear infinite;
+}
+
+@keyframes rainbowText {
+  0% { color: #ff0000; }
+  14% { color: #ff7f00; }
+  29% { color: #ffff00; }
+  43% { color: #00ff00; }
+  57% { color: #0000ff; }
+  71% { color: #4b0082; }
+  86% { color: #8f00ff; }
+  100% { color: #ff0000; }
+}

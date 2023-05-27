@@ -1,7 +1,7 @@
 
 
 import React from 'react';
-import Navigation from '../Navigation';
+
 import Homepage from './HomePage';
 
 function Home() {
@@ -9,7 +9,7 @@ function Home() {
   return (
 
 <>
-<Navigation/>
+
 <Homepage/>
 
 </>

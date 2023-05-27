@@ -6,9 +6,18 @@ const fruits = [
     image: 'https://tse2.mm.bing.net/th?id=OIP.5bLEGgrUJw9PXpPA3ReYBwHaGU&pid=Api&P=0',
     price: 100,
     benefits: 'Rich in antioxidants and dietary fiber, promotes heart health',
-viewedproducts:'yes' 
+    viewedproducts: 'yes',
   },
 
+  {
+    id: 1,
+    name: 'Aama ko Achar',
+    category: 'Grossary',
+    image: 'https://tse2.mm.bing.net/th?id=OIP.5bLEGgrUJw9PXpPA3ReYBwHaGU&pid=Api&P=0',
+    price: 100,
+    benefits: 'Rich in antioxidants and dietary fiber, promotes heart health',
+viewedproducts:'yes' 
+  },
 
   {
     id: 3,
@@ -173,7 +182,7 @@ viewedproducts:'yes'
   {
     id: 23,
     name: 'Spinach',
-    category: 'Vegetable',
+    category: 'Leafy',
     image: 'https://example.com/spinach-image.jpg',
     price: 1.79,
     benefits: 'Packed with iron and antioxidants, promotes healthy skin, supports brain health',

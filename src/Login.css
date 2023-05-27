@@ -1,85 +1,115 @@
-body {
-  margin: 0;
-  padding: 0;
-  font-family: sans-serif;
-}
-
 .container {
-  width: 100%;
-  max-width: 500px;
+  max-width: 600px;
   margin: 0 auto;
-  padding: 250px 20px;
-  box-sizing: border-box;
+  padding: 20px;
+text-align: center;
+  background-color: #f8f8f8;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-top: 120px;
+  margin-bottom: 40px;
+  animation: rainbow 5s ease-in-out infinite;
 }
 
-@media (max-width: 600px) {
-  .container {
-    padding: 30px 10px;
+@keyframes rainbow {
+  0% {
+    color: red;
   }
-  h1 {
-    font-size: 1.5rem;
+  14% {
+    color: orange;
   }
-  label {
-    font-size: 1rem;
+  28% {
+    color: yellow;
   }
-  input {
-    font-size: 0.9rem;
-    padding: 8px;
+  42% {
+    color: green;
   }
-  button[type="submit"] {
-    font-size: 0.9rem;
-    padding: 8px;
+  57% {
+    color: blue;
   }
-  p {
-    font-size: 0.9rem;
+  71% {
+    color: indigo;
+  }
+  85% {
+    color: violet;
+  }
+  100% {
+    color: red;
   }
 }
 
 
-h1 {
+
+
+p {
+  color: #ff0000;
+  margin-bottom: 10px;
   text-align: center;
-  font-size: 2rem;
-  margin-bottom: 30px;
 }
 
 form {
-  display: flex;
-  flex-direction: column;
+  margin-bottom: 20px;
+
 }
 
 label {
-  font-size: 1.2rem;
-  margin-bottom: 10px;
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #555;
 }
 
 input {
-  font-size: 1rem;
-  padding: 10px;
-  margin-bottom: 20px;
-  border-radius: 5px;
+  width: 50%;
+  padding: 15px;
+  margin-bottom: 10px;
   border: 1px solid #ccc;
-  box-sizing: border-box;
-  width: 100%;
+  border-radius: 2px;
+  
 }
 
-button[type="submit"] {
-  background-color: #008CBA;
+button {
+  padding: 10px 20px;
+  background-color: #333;
   color: #fff;
-  font-size: 1rem;
-  padding: 10px;
   border: none;
-  border-radius: 5px;
-  margin-top: 20px;
+  border-radius: 4px;
   cursor: pointer;
+
 }
 
-button[type="submit"]:hover {
-  background-color: #006B8E;
+button:hover {
+  background-color: #555;
+  
 }
 
-p {
-  text-align: center;
-  margin-top: 30px;
-  font-size: 1rem;
+p:last-child {
+  font-size: 14px;
 }
 
+p:last-child a {
+  color: #333;
+  font-weight: bold;
+}
+
+p:last-child a:hover {
+  color: #555;
+}
+
+.login-icon {
+  display: flex;
+  align-items: center;
+  margin-right: 55px;
+  font-size: 3rem;
+
+}
+
+
+
+.login-text {
+  margin-left: 9px;
+  font-weight: bold;
+  color: #333;
+  font-size: 35px;font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+}

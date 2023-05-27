@@ -56,3 +56,21 @@ body{
   margin:0% 3%;
   }
   }
+
+  .row1 {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+  }
+  
+  .row1 a {
+    color: #333333;
+    font-size: 15px;
+    margin: 0 10px;
+    text-decoration: none;
+  }
+  
+  .row1 a:hover {
+    color: #555;
+  }
+  

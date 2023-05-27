@@ -1,25 +1,30 @@
+
 import React, { useState, useRef, useEffect } from 'react';
-import { FaInfoCircle, FaBlog, FaUser, FaQuestionCircle, FaFileContract, FaTruck, FaPhone } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import Fruits from '../Page/Card';
-import './Navigation.css';
 
+import './Navigation.css';
+import { FaFacebook, FaTwitter, FaInstagram, FaShoppingCart } from 'react-icons/fa';
 const Navigation = () => {
+  const [cartCount, setCartCount] = useState(0);
+  const [location, setLocation] = useState('Machhapokhari, Tokha');
+
+
+  const handleLocationChange = (e) => {
+    setLocation(e.target.value);
+  };
+
+
   const [searchTerm, setSearchTerm] = useState('');
   const [searchResults, setSearchResults] = useState([]);
   const [showMore, setShowMore] = useState(false);
-  const [darkMode, setDarkMode] = useState(false);
+
   const searchRef = useRef(null);
 
   const handleSearch = (event) => {
     setSearchTerm(event.target.value);
   };
 
-  const handleClickOutside = (event) => {
-    if (searchRef.current && !searchRef.current.contains(event.target)) {
-      setSearchTerm('');
-    }
-  };
 
   const handleClear = () => {
     setSearchTerm('');
@@ -42,6 +47,9 @@ const Navigation = () => {
     if (showMore) {
       results = searchResults;
     }
+
+
+
     return results.map((fruit) => (
       <Link to={`/fruits/${fruit.id}`} key={fruit.id}>
         <div className="search-item">
@@ -61,88 +69,111 @@ const Navigation = () => {
     ));
   };
 
-  const handleDarkModeToggle = () => {
-    setDarkMode(!darkMode);
-  };
 
-  useEffect(() => {
-    if (darkMode) {
-      document.body.classList.add('dark-mode');
-    } else {
-      document.body.classList.remove('dark-mode');
-    }
-  }, [darkMode]);
+
+
+
 
   return (
-    <nav className="navbar" onClick={handleClickOutside}>
-      <div className="nav-center">
-        <div className="nav-header">
-          <Link to="/">
-            <div className="logo">
-              <img
-                src="https://th.bing.com/th/id/OIP.WI5YYcU5WGWcFp36Xe8sPAHaEX?w=278&h=185&c=7&r=0&o=5&dpr=1.3&pid=1.7"
-                alt="Fruit Mart"
-                className="logo-image"
-              />
-              <div className="logo-text"></div>
+    <div className="app">
+      <nav>
+        <div className="nav-container">
+          <div className="social-media">
+            <div className="icon">
+              <Link to="https://www.facebook.com">
+                <FaFacebook />
+              </Link>
             </div>
-          </Link>
-        </div>
-        <Link to="/aboutus/us" className="nav-link">
-          <FaInfoCircle className="nav-icon" />
-          About Us
-        </Link>
+            <div className="icon">
+              <Link to="https://www.twitter.com">
+                <FaTwitter />
+              </Link>
+            </div>
+            <div className="icon">
+              <Link to="https://www.instagram.com">
+                <FaInstagram />
+              </Link>
+            </div>
+          </div>
 
-        <a href="https://blog.fruitmart.com" className="nav-link">
-          <FaBlog className="nav-icon" />
-          Blog
-        </a>
-        <div className="nav-link">
-          <FaUser className="nav-icon" />
-          Customer_service
-          <ul className="customer-service-help-submenu">
-            <li><Link to="#"><FaQuestionCircle /> FAQs</Link></li>
-            <li><Link to="/Trmsandcdn"><FaFileContract /> Terms and Conditions</Link></li>
-            <li><Link to="#"><FaTruck /> Delivery Policy / Information</Link></li>
-            <li><Link to="/Contactus"><FaPhone /> Contact Us</Link></li>
+          <ul className="nav-links">
+            <li>
+              <Link to="#">Offer</Link>
+            </li>
+            <li>
+              <Link to="#">Wishlist</Link>
+            </li>
+            <li>
+              <Link to="#">Login/Signup</Link>
+            </li>
           </ul>
         </div>
+      </nav>
 
-        <div className="nav-links">
-          <div className="search-container" ref={searchRef}>
-            <input
+
+
+      <section>
+      <select value={location} onChange={handleLocationChange}>
+        <option>Machhapokhari, Tokha</option>
+      </select>
+
+        
+      <section className='serachbox'>
+      <input className='searchboxfilter'
               type="text"
               placeholder="Search Fruits"
               value={searchTerm}
               onChange={handleSearch}
             />
-            {searchTerm.length > 0 && (
-              <button className="clear-button" onClick={handleClear}>
-                X
-              </button>
-            )}
+<div className="search-container" ref={searchRef}>
+          
+          {searchTerm.length > 0 && (
+            <button className="clear-button" onClick={handleClear}>
+              X
+            </button>
+          )}
 
-            {searchTerm.length > 1 && (
-              <div className="search-results">
-                {renderSearchResults()}
-                {!showMore && searchResults.length > 4 && (
-                  <div className="search-item" onClick={handleShowMore}>
-                    <div className="search-details">
-                      Show More
-                    </div>
+          {searchTerm.length > 1 && (
+            <div className="search-results">
+              {renderSearchResults()}
+              {!showMore && searchResults.length > 4 && (
+                <div className="search-item" onClick={handleShowMore}>
+                  <div className="search-details">
+                    Show More
                   </div>
-                )}
-              </div>
-            )}
-          </div>
+                </div>
+              )}
+            </div>
+          )}
         </div>
 
-        <button  type='none' className="dark-mode-toggle" onClick={handleDarkModeToggle}>
-          {darkMode ? 'Light Mode' : 'Dark Mode'}
-        </button>
+</section>
+  
+ 
+<section className="cart">
+
+      <div className="cart-container">
+        <FaShoppingCart className="cart-icon" />
+        <span className="cart-count">{cartCount}</span>
       </div>
-    </nav>
-  );
+      <div className="my-cart">My Cart - Nrs.{cartCount}</div>
+  
+    </section>
+
+ 
+     
+    
+
+
+      
+</section>
+    </div>
+    
+);
 };
 
+
 export default Navigation;
+
+
+

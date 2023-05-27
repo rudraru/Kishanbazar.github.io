@@ -4,7 +4,7 @@ import '../../Page/Aboutus.css'
 
 import fruits from '../Card';
 import { Link } from 'react-router-dom';
-import Owner2 from '../../Image/Aayush1.jpg';
+
 const HomePage = () => {
 
 
@@ -14,7 +14,7 @@ const HomePage = () => {
     setSelectedCategory(category);
   };
 
-  const filteredFruits = fruits.filter((fruit) => fruit.category === selectedCategory ).slice(0, 8);
+  const filteredFruits = fruits.filter((fruit) => fruit.category === selectedCategory ).slice(0, 6);
 
 
   return (
@@ -45,7 +45,7 @@ const HomePage = () => {
       <section className="gallery">
         <h2>Featured Product</h2>
         <div className="category-selector">
-        {['Fruit', 'Vegetable','Leafy item '].map((category) => (
+        {['Fruit', 'Vegetable','Leafy','Grossary'].map((category) => (
           <button
             key={category}
             className={selectedCategory === category ? 'selected' : ''}
@@ -64,12 +64,12 @@ const HomePage = () => {
        
           </div>
         ))}
-        <Link className='shopbtn'>
-       <button>  Shop </button>
-       </Link>
+        
       </div>
       </section>
-
+      <Link className='shopbtn'>
+       <button> Go To Shop Page </button>
+       </Link>
 
  
     </div>
