@@ -4,7 +4,9 @@
   justify-content: space-between;
   background-color: rgb(235, 151, 24);
 
+
 }
+
 
 .nav-links {
   list-style: none;
@@ -68,11 +70,12 @@ background-size: contain;
 
 select {
   padding: 15px;
-  font-size: 16px;
-  border: 1px solid #ccc;
+  font-size: 14px;
+  border: 1px solid #110e0e;
   border-radius: 4px;
   margin: 1.4%;
   margin-left: 27%;
+
 }
 
 select:focus {
@@ -178,6 +181,7 @@ input.searchboxfilter {
 section {
   display: flex;
   align-items: center;
+  background-color: #f3f3f3;
 }
 
 
@@ -194,12 +198,12 @@ section {
 .cart {
   display: flex;
   align-items: center;
-  background-color: #f8f8f8;
-  padding: 15px;
-  border-radius: 4px;
+  background-color:rgb(235, 151, 24);
+  padding: 8px;
+  border-radius: 50px;
   margin-left: 9%;
-  width: 170px;
-  height:auto;
+  width: 200px;
+  height:40px;
 }
 
 .cart-container {
@@ -210,7 +214,7 @@ section {
 }
 
 .cart-icon {
-  font-size: 30px;
+  font-size: 20px;
   color: #555;
 
   
@@ -218,8 +222,8 @@ section {
 
 .cart-count {
   position: absolute;
-  top: -8px;
-  right: 9px;
+  top: 7px;
+  right: 7px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -248,5 +252,5 @@ section {
 }
 
 .cart:hover .cart-count {
-  background-color: #c70000;
+  background-color: #000000;
 }

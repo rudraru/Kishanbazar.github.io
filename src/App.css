@@ -78,7 +78,7 @@
   animation: rainbowText 5s linear infinite;
 }
 
-@keyframes rainbowText {
+@keyframes rainbowText {  
   0% { color: #ff0000; }
   14% { color: #ff7f00; }
   29% { color: #ffff00; }

@@ -10,8 +10,6 @@ import Login from './LogIn';
 import FruitList from './Component/Tab';
 
 
-
-
 import Home from './Component/Page/Home/Home.jsx';
 
 import AboutUs from './Component/Page/Aboutus';
@@ -21,7 +19,7 @@ import ContactUs from './Component/Page/Contactus';
 import FruitDetails from './Component/Page/FruitsDetails';
 
 import SummaryPage from './Component/Page/Summary';
-import Bcart from './Component/Page/Bcart';
+import NavCart from './Component/Page/Bcart'
 import TermsAndConditionsPage from './Component/Page/Tac';
 
 import Navigation from './Component/Page/Navigation'
@@ -49,7 +47,7 @@ function App() {
   <Route path='/Fruits' element={<FruitList/>}/>
   <Route path='/Contactus' element={<ContactUs/>}/>
   <Route path='/order-summary' element={<SummaryPage/>}/>
-  <Route path='/Bcart' element={<Bcart/>}/>
+  <Route path='/Navcart' element={<NavCart/>}/>
   <Route path='/Trmsandcdn' element={<TermsAndConditionsPage/>}/>
 
   

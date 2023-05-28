@@ -1,4 +1,5 @@
 .container {
+
   max-width: 600px;
   margin: 0 auto;
   padding: 20px;
@@ -7,7 +8,7 @@ text-align: center;
   border-radius: 4px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   margin-top: 120px;
-  margin-bottom: 40px;
+  margin-bottom: 100px;
   animation: rainbow 5s ease-in-out infinite;
 }
 
@@ -69,7 +70,7 @@ input {
 }
 
 button {
-  padding: 10px 20px;
+  padding: 50px 20px;
   background-color: #333;
   color: #fff;
   border: none;
@@ -107,7 +108,7 @@ p:last-child a:hover {
 
 
 .login-text {
-  margin-left: 9px;
+  margin-left: 11px;
   font-weight: bold;
   color: #333;
   font-size: 35px;font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;

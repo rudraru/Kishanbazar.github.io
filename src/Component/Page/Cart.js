@@ -1,11 +1,15 @@
 import React, { useState, useEffect } from "react";
 import "./Cart.css";
-import { FaCartPlus, FaTrash } from "react-icons/fa";
+
+import { FaCartPlus, FaArrowDown, FaArrowUp } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import fruits from "./Card";
 
-const Product = ({ product, handleAddToCart }) => {
+const Product = ({ product, handleAddToCart, handleOrder }) => {
   const [quantity, setQuantity] = useState(1);
+  const [arrowUp, setArrowUp] = useState(false);
 
   const handleIncreaseQuantity = () => {
     setQuantity(quantity + 1);
@@ -17,25 +21,61 @@ const Product = ({ product, handleAddToCart }) => {
     }
   };
 
+  const handleArrowClick = () => {
+    setArrowUp(!arrowUp);
+  };
+
+  const handleAddToCartClick = () => {
+    handleAddToCart(product, quantity);
+
+    const totalPrice = product.price * quantity;
+
+    toast.success(
+      `${product.name} (Quantity: ${quantity}) added to cart successfully! Total Amount: Rs ${totalPrice}`,
+      {
+        position: toast.POSITION.BOTTOM_RIGHT,
+        autoClose: 4000,
+        hideProgressBar: true,
+      }
+    );
+  };
+
   return (
     <div className="product">
       <img src={product.image} alt={product.name} />
       <h3>{product.name}</h3>
-      <p>Price: Rs {product.price}</p>
+      <p className="product-price">Price: Rs {product.price}</p>
       <div className="quantity">
-        <button onClick={handleDecreaseQuantity}>-</button>
-        <span>{quantity} kg</span>
-        <button onClick={handleIncreaseQuantity}>+</button>
+        <button className="quantity-btn-small" onClick={handleDecreaseQuantity}>
+          -
+        </button>
+        <span className="quantity-value">{quantity} kg</span>
+        <button className="quantity-btn-small" onClick={handleIncreaseQuantity}>
+          +
+        </button>
       </div>
-      <button onClick={() => handleAddToCart(product, quantity)}>
+      <button className="add-to-cart-btn" onClick={handleAddToCartClick}>
         <FaCartPlus />
-        Add cart
+        Add to Cart
       </button>
+      <button className="place-order-btn" onClick={handleOrder}>
+        Place Order
+      </button>
+      <button className="arrow-btn" onClick={handleArrowClick}>
+        {arrowUp ? <FaArrowUp /> : <FaArrowDown />}
+      </button>
+      {arrowUp && (
+        <button className="order-now-btn" onClick={handleOrder}>
+          Order Now
+        </button>
+      )}
     </div>
   );
 };
 
-const Products = ({ handleAddToCart }) => {
+
+
+const Products = ({ handleAddToCart, handleOrder }) => {
   return (
     <div className="products">
       {fruits.map((product) => (
@@ -43,6 +83,7 @@ const Products = ({ handleAddToCart }) => {
           key={product.id}
           product={product}
           handleAddToCart={handleAddToCart}
+          handleOrder={handleOrder}
         />
       ))}
     </div>
@@ -53,13 +94,6 @@ const Cart = () => {
   const [cartItems, setCartItems] = useState(
     JSON.parse(localStorage.getItem("cartItems")) || []
   );
-
-
-  const user = localStorage.getItem('user');
-  if (!user) {
-    // Redirect to the login page if the user is not logged in
-    window.location.href = '/SignIn';
-  }
 
   const navigate = useNavigate();
 
@@ -81,10 +115,6 @@ const Cart = () => {
     }
   };
 
-  const handleRemoveFromCart = (itemId) => {
-    const updatedCartItems = cartItems.filter((item) => item.id !== itemId);
-    setCartItems(updatedCartItems);
-  };
   const handleOrder = () => {
     const cartItemsQueryParam = encodeURIComponent(
       JSON.stringify(cartItems)
@@ -92,81 +122,13 @@ const Cart = () => {
     navigate(`/order-summary?cartItems=${cartItemsQueryParam}`);
   };
 
-  const total = cartItems.reduce(
-    (total, item) => total + item.price * item.quantity,
-    0
-  );
-
   return (
-    <div className="cart-invoice">
-    <div className="products-container">
-        <Products handleAddToCart={handleAddToCart} />
-      </div>
-      <div className="cart-container">
-        <h2>Cart</h2>
-        {cartItems.length === 0 ? (
-          <p>Your cart is empty!</p>
-        ) : (
-          <table className="cart-items">
-             <thead>
-        <tr>
-          <th colSpan="2">Product Name</th>
-          <th>QTY</th>
-          <th>Unit</th>
-          <th>Prices</th>
-          <th>Total</th>
-          <th></th>
-        </tr>
-      </thead>
-              <tbody>
-                {cartItems.map((item, index) => (
-                  <tr key={item.id} className="cart-item">
-                    <td>{index + 1}</td>
-                    <td>
-                      <div className="cart-item-image">
-                        <img src={item.image} alt={item.name} />
-                      </div>
-                      <div className="cart-item-details">
-                        <h4>{item.name}</h4>
-                      </div>
-                    </td>
-                    <td>{item.quantity} kg</td>
-                    <td>Rs {item.price}</td>
-                    <td>Rs {item.quantity * item.price}</td>
-                    <td>
-                      Rs {item.quantity * item.price}
-                      <button
-                        onClick={() => handleRemoveFromCart(item.id)}
-                        className="remove-button"
-                      >
-                        <FaTrash />
-                      </button>
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-              <tfoot>
-                <tr>
-                  <td colSpan="5">Total Amount:</td>
-                  <td>Rs {total}</td>
-                  <td></td>
-                </tr>
-              </tfoot>
-            </table>
-          )}
-          <div className="cart-footer">
-            {total !== 0 && (
-              <>
-                <p>Thank you for your purchase!</p>
-                <button onClick={handleOrder}>Place Order</button>
-              </>
-            )}
-          </div>
-         
-       
-        </div>
-      </div>
-  
-  )
-}
+    <div className="cart-container">
+      <Products handleAddToCart={handleAddToCart} handleOrder={handleOrder} />
+
+      <ToastContainer />
+    </div>
+  );
+};
+
 export default Cart;
