@@ -5,44 +5,78 @@
   box-sizing: border-box;
 }
 
-.summary-page h1 {
-  font-size: 2rem;
-  text-align: center;
+.invoice-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
 }
 
-.summary-page h2 {
+.invoice-logo {
+  width: 80px;
+  margin-right: 20px;
+}
+
+.invoice-company h2 {
   font-size: 1.5rem;
-  margin-top: 20px;
+  margin: 0;
 }
 
-.summary-page ul {
+.invoice-company p {
+  font-size: 1rem;
+  margin: 0;
+}
+
+.invoice-location p {
+  font-size: 1rem;
+  margin: 0;
+  margin-top: 10px;
+}
+
+.invoice-section {
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 4px;
+}
+
+.invoice-bill {
+  font-size: 1.5rem;
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+.invoice-customer {
+  font-size: 1.2rem;
+  margin-top: 0;
+}
+
+.invoice-items {
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
-.summary-page li {
+.invoice-items li {
   margin-bottom: 10px;
 }
 
-.summary-page input,
-.summary-page select {
+.invoice-details input,
+.invoice-details select {
   display: block;
   width: 100%;
   height: 40px;
   margin-bottom: 10px;
-  padding: 10px;
+  padding: 8px;
   font-size: 1rem;
-  border-radius: 5px;
   border: 1px solid #ccc;
+  border-radius: 4px;
   box-sizing: border-box;
 }
 
-.summary-page select {
+.invoice-details select {
   font-size: 1.1rem;
 }
 
-.summary-page button {
+.invoice-details button {
   display: block;
   width: 100%;
   height: 50px;
@@ -53,18 +87,114 @@
   color: #fff;
   background-color: #007bff;
   border: none;
-  border-radius: 5px;
+  border-radius: 4px;
   cursor: pointer;
   transition: background-color 0.3s ease-in-out;
 }
 
-.summary-page button:hover {
+.invoice-details button:hover {
   background-color: #0069d9;
 }
 
-.summary-page p {
+.invoice-details p {
   font-size: 1.2rem;
   margin-top: 20px;
   text-align: center;
   color: green;
+}
+
+
+.invoice-payment {
+  margin-top: 20px;
+}
+
+.payment-methods {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.payment-method {
+  display: flex;
+  align-items: center;
+  margin-right: 20px;
+  margin-bottom: 10px;
+}
+
+.payment-method input[type="checkbox"] {
+  margin-right: 5px;
+  width: 14px;
+  height: 14px;
+}
+
+
+.invoice-section {
+  border: 1px solid #ccc;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+.invoice-bill {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.invoice-customer {
+  margin-bottom: 20px;
+}
+
+.invoice-items {
+  list-style-type: none;
+  padding: 0;
+  margin-bottom: 20px;
+}
+
+.invoice-items li {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.invoice-label {
+  font-weight: bold;
+}
+
+.invoice-total {
+  font-weight: bold;
+  text-align: right;
+}
+
+
+
+
+.invoice-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.invoice-logo {
+  width: 100px; /* Adjust the width as needed */
+  height: auto;
+  margin-right: 20px;
+}
+
+.invoice-company h2 {
+  margin: 0;
+}
+
+.invoice-company p {
+  margin: 0;
+  font-size: 14px;
+  color: #888;
+}
+
+.invoice-location {
+  margin-left: auto;
+  text-align: right;
+  font-size: 14px;
+  color: #888;
+}
+
+.remove-icon {
+  cursor: pointer;
 }

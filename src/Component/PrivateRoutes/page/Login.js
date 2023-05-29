@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-const Login = () => {
+const PLogin = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
-  const history = useNavigate();
+  const navigate = useNavigate();
 
   const handleLogin = (e) => {
     e.preventDefault();
@@ -12,7 +12,7 @@ const Login = () => {
     // Add your authentication logic here
     if (username === 'admin' && password === 'password') {
       // Set authenticated state or store token, etc.
-      history.push('/admin/dashboard'); // Redirect to the dashboard on successful login
+      navigate('/private'); // Redirect to the private dashboard on successful login
     } else {
       alert('Invalid credentials');
     }
@@ -36,5 +36,4 @@ const Login = () => {
   );
 };
 
-export default Login;
-
+export default PLogin;

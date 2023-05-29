@@ -6,19 +6,19 @@ const fruits = [
     image: 'https://tse2.mm.bing.net/th?id=OIP.5bLEGgrUJw9PXpPA3ReYBwHaGU&pid=Api&P=0',
     price: 100,
     benefits: 'Rich in antioxidants and dietary fiber, promotes heart health',
-    viewedproducts: 'yes',
+    unit: 'KG',
   },
 
   {
     id: 1,
     name: 'Aama ko Achar',
     category: 'Grossary',
-    image: 'https://tse2.mm.bing.net/th?id=OIP.5bLEGgrUJw9PXpPA3ReYBwHaGU&pid=Api&P=0',
+    image: 'https://tse4.mm.bing.net/th?id=OIP.bb2UMxqQveSiqWRLDXhXcAHaHa&pid=Api&P=0&h=180',
     price: 100,
     benefits: 'Rich in antioxidants and dietary fiber, promotes heart health',
-viewedproducts:'yes' 
+    viewedproducts: 'yes',
+    unit: 'BOTTLE',
   },
-
   {
     id: 3,
     name: 'Orange',

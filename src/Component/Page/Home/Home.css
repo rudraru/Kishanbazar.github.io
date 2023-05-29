@@ -70,6 +70,7 @@
   flex-direction: column;
   align-items: center;
   padding: 20px;
+
 }
 
 h2 {
@@ -114,6 +115,7 @@ h2 {
   padding: 10px;
   border: 1px solid #e0e0e0;
   border-radius: 4px;
+  
 }
 
 .fruit h3 {
@@ -126,6 +128,7 @@ h2 {
   height: 150px;
   object-fit: cover;
   border-radius: 50%;
+  background-size: contain;
 }
 
 .fruit p {
@@ -142,6 +145,7 @@ h2 {
   .fruit img {
     width: 100%;
     height: auto;
+    background-size: contain;
   }
 }
 
@@ -153,6 +157,7 @@ h2 {
   .fruit img {
     width: 80%;
     height: auto;
+    background-size: contain;
   }
 }
 
@@ -173,6 +178,7 @@ h2 {
     text-align: center;
     box-sizing: border-box;
     background-color: #f5f5f5;
+    
   }
 
   .fruit h3 {

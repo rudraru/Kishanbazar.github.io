@@ -1,117 +1,205 @@
-import React, { useState, useEffect } from 'react'
-import {useNavigate, useParams, useLocation } from "react-router-dom";
-import axios from "axios";
-import "./Summary.css";
+import React, { useState, useEffect } from 'react';
+import { FaTrash } from 'react-icons/fa';
+
+import { useNavigate, useParams, useLocation } from 'react-router-dom';
+import axios from 'axios';
+import './Summary.css';
 
 const SummaryPage = () => {
-const [myOrderId, setMyOrderId] = useState(null);
+  const [myOrderId, setMyOrderId] = useState(null);
   const [cartItemsWithDetails, setCartItemsWithDetails] = useState([]);
   const { customerName } = useParams();
   const location = useLocation();
   const searchParams = new URLSearchParams(location.search);
-  const cartItems = searchParams.get("cartItems") ? JSON.parse(searchParams.get("cartItems")) : [];
+  const cartItems = searchParams.get('cartItems') ? JSON.parse(searchParams.get('cartItems')) : [];
   const [orderConfirmed, setOrderConfirmed] = useState(false);
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [phone, setPhone] = useState("");
-  const [address, setAddress] = useState("");
-  const [paymentMethod, setPaymentMethod] = useState("");
-  const history = useNavigate();
-  useEffect(() => {
-    const fetchCartItemsData = async () => {
-      try {
-        const itemsWithDetails = await Promise.all(cartItems.map(async (item) => {
+  const [paymentMethod, setPaymentMethod] = useState('');
+  const navigate = useNavigate();
+
+  const fetchCartItemsData = async () => {
+    try {
+      const itemsWithDetails = await Promise.all(
+        cartItems.map(async (item) => {
           const { data } = await axios.get(`/products/${item.id}`);
           return {
             ...item,
             name: data.name,
             price: data.price,
           };
-        }));
-        setCartItemsWithDetails(itemsWithDetails);
-      } catch (error) {
-        console.error(error);
-      }
+        })
+      );
+      setCartItemsWithDetails(itemsWithDetails);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  useEffect(() => {
+    const interval = setInterval(fetchCartItemsData, 500); // Fetch data every 0.5 seconds
+
+    return () => {
+      clearInterval(interval); // Cleanup the interval when the component unmounts
     };
-    fetchCartItemsData();
-  }, [cartItems]);
-
-
-  const handleConfirmOrder = async () => {
-    const items = cartItemsWithDetails.map(item => {
-      return {
-        item_name: item.name,
-        item_price: item.price,
-        quantity: item.quantity,
-      };
-    });
+  }, []);
   
+  const handleConfirmOrder = async () => {
+    const items = cartItemsWithDetails.map((item) => ({
+      item_name: item.name,
+      item_price: item.price,
+      quantity: item.quantity,
+    }));
+
     const orderData = {
-      name: '',
-      email: '',
-      phone: '',
-      address: '',
-      paymentMethod: '',
+     
+      paymentMethod,
       items,
     };
-  
+
     try {
       const response = await axios.post('/orders', orderData);
       console.log(response.data);
-  
-      // Clear the cart items from the local storage
+
+      // Clear the cart items from local storage
       localStorage.removeItem('cartItems');
-  
+
       // Set the order confirmation state to true
       setOrderConfirmed(true);
-  
+
       // Redirect to homepage after 2 seconds
       setTimeout(() => {
-        history.push('/');
+        navigate('/');
       }, 2000);
     } catch (error) {
       console.log(error);
     }
   };
-  
 
-      
+  function calculateTotalAmount(cartItems) {
+    return cartItems.reduce((total, item) => total + item.price * item.quantity, 0);
+  }
+  const orderAmount = calculateTotalAmount(cartItems);
+const shippingCharge = orderAmount < 1500 ? 150 : 0;
+const totalAmount = orderAmount + shippingCharge;
+
+const handleRemoveItem = (itemId) => {
+  const updatedCartItems = cartItems.filter((item) => item.id !== itemId);
+  const updatedCartItemsWithDetails = cartItemsWithDetails.filter((item) => item.id !== itemId);
+
+  localStorage.setItem('cartItems', JSON.stringify(updatedCartItems));
+  setCartItemsWithDetails(updatedCartItemsWithDetails);
+};
+
+
+
   return (
     <div className="summary-page">
-      <h1>Summary Page</h1>
-      <h2>Customer: {customerName}</h2>
-      <ul>
-        {cartItems.map((item) => (
-          <li key={item.id}>
-            {item.name} - {item.price} - {item.quantity}
-          </li>
-        ))}
-      </ul>
-      <div>
-        <input type="text" placeholder="Name" value={name} onChange={(e) => setName(e.target.value)} />
-        <input type="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} />
-        <input type="tel" placeholder="Phone" value={phone} onChange={(e) => setPhone(e.target.value)} />
-        <input type="text" placeholder="Address" value={address} onChange={(e) => setAddress(e.target.value)} />
-        <select value={paymentMethod} onChange={(e) => setPaymentMethod(e.target.value)}>
-          <option value="">Select Payment Method</option>
-          <option value="credit_card">Credit Card</option>
-          <option value="paypal">PayPal</option>
-          <option value="paypal">Cash on delivery</option>
-          <option value="paypal">Fonepay</option>
-          <option value="paypal">Esewa</option>
-        </select>
-
-        <button onClick={() => handleConfirmOrder(myOrderId)}>Confirm Order</button>
-{orderConfirmed && <p style={{ color: 'red' }}>Order confirmed! Redirecting to homepage...</p>}
+     <div className="invoice-header">
+  <img src="https://tse4.mm.bing.net/th?id=OIP.owJztdFqBCzweYjwQmsZUgHaFO&pid=Api&P=0&h=180" alt="Logo" className="invoice-logo" />
+  <div className="invoice-company">
+    <h2>Kishan ko Bazar</h2>
+    <p>Machhapokhari,Tokha</p>
+  </div>
+  
+</div>
 
 
-        <button onClick={handleConfirmOrder}>Confirm Order</button>
-        {orderConfirmed && <p style={{ color: 'red' }}>Order confirmed! Redirecting to homepage...</p>}
+      <div className="invoice-section">
+      <h2 className="invoice-bill">Estimate Bill</h2>
+  <h2 className="invoice-customer">Customer: {customerName}</h2>
+  <ul className="invoice-items">
+    <li className="invoice-header">
+      <span className="invoice-label">S.N</span>
+      <span className="invoice-label">Product Name</span>
+      <span className="invoice-label">Price</span>
+      <span className="invoice-label">Quantity</span>
+      <span className="invoice-label">Unit</span>
+      
+    </li>
+    {cartItems.map((item, index) => (
+      <li key={item.id}>
+        <span>{index + 1}</span>
+        <span>{item.name}</span>
+        <span>{item.price}</span>
+        <span>{item.quantity}</span>
+        <span>{item.unit}</span>
+        <span className="remove-icon" onClick={() => handleRemoveItem(item.id)}>
+      <FaTrash />
+    </span>
+      </li>
+    ))}
+  </ul>
+
+<p> Amount: {totalAmount}</p>
+  <div className="invoice-footer">
+  
+    <p className="invoice-message">Thank you for your purchase!</p>
+  </div>
 
       </div>
+      <div className="invoice-details">
+          
+          <div className="invoice-payment">
+  <h3>Select Payment Method:</h3>
+  <div className="payment-methods">
+    <label className="payment-method">
+      <input
+        type="checkbox"
+        value="credit_card"
+        checked={paymentMethod.includes("credit_card")}
+        onChange={(e) => setPaymentMethod(e.target.value)}
+      />
+      Credit Card
+    </label>
+    <label className="payment-method">
+      <input
+        type="checkbox"
+        value="paypal"
+        checked={paymentMethod.includes("paypal")}
+        onChange={(e) => setPaymentMethod(e.target.value)}
+      />
+      PayPal
+    </label>
+    <label className="payment-method">
+      <input
+        type="checkbox"
+        value="cash_on_delivery"
+        checked={paymentMethod.includes("cash_on_delivery")}
+        onChange={(e) => setPaymentMethod(e.target.value)}
+      />
+      Cash on Delivery
+    </label>
+    <label className="payment-method">
+      <input
+        type="checkbox"
+        value="fonepay"
+        checked={paymentMethod.includes("fonepay")}
+        onChange={(e) => setPaymentMethod(e.target.value)}
+      />
+      Fonepay
+    </label>
+    <label className="payment-method">
+      <input
+        type="checkbox"
+        value="esewa"
+        checked={paymentMethod.includes("esewa")}
+        onChange={(e) => setPaymentMethod(e.target.value)}
+      />
+      Esewa
+    </label>
+  </div>
+</div>
+
+
+
+          <button onClick={handleConfirmOrder} disabled={orderConfirmed}>
+            Confirm Order
+          </button>
+          {orderConfirmed && (
+            <p style={{ color: 'red' }}>Order confirmed! Redirecting to homepage...</p>
+          )}
+        </div>
     </div>
   );
 };
 
-    
-    export default SummaryPage;
+export default SummaryPage;

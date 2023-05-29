@@ -1,18 +1,17 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { Link, } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import Fruits from '../Page/Card';
-import { FaFacebook, FaTwitter, FaInstagram, FaShoppingCart } from 'react-icons/fa';
+import { FaFacebook, FaTwitter, FaInstagram, FaShoppingCart, FaBars } from 'react-icons/fa';
 import './Navigation.css';
 
 function Navigation() {
-
-
   const [location, setLocation] = useState('Machhapokhari, Tokha');
   const [cartItemsState, setCartItemsState] = useState(
     JSON.parse(localStorage.getItem('cartItems')) || []
   );
   const [cartCount, setCartCount] = useState(0);
   const [totalAmount, setTotalAmount] = useState(0);
+  const [showMobileMenu, setShowMobileMenu] = useState(false);
 
   useEffect(() => {
     const uniqueProductIds = new Set(cartItemsState.map((item) => item.id));
@@ -83,17 +82,24 @@ function Navigation() {
       // Fetch updated cart items from localStorage
       const updatedCartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
       setCartItemsState(updatedCartItems);
-    }, 100); // Refresh every 0.4 seconds
+    }, 100); // Refresh every 0.1 second
 
     return () => {
       clearInterval(interval); // Clear the interval when the component unmounts
     };
   }, []);
 
+  const handleMobileMenuToggle = () => {
+    setShowMobileMenu(!showMobileMenu);
+  };
+
   return (
-    <div className="app">
+    <div className={`app ${showMobileMenu ? 'mobile-menu-active' : ''}`}>
       <nav>
         <div className="nav-container">
+          <div className="menu-icon" onClick={handleMobileMenuToggle}>
+            <FaBars />
+          </div>
           <div className="social-media">
             <div className="icon">
               <Link to="https://www.facebook.com">
@@ -112,7 +118,7 @@ function Navigation() {
             </div>
           </div>
 
-          <ul className="nav-links">
+          <ul className={`nav-links ${showMobileMenu ? 'mobile-menu-active' : ''}`}>
             <li>
               <Link to="#">Offer</Link>
             </li>
@@ -165,7 +171,6 @@ function Navigation() {
             <span className="cart-count">{cartCount}</span>
           </div>
           <div className="my-cart">My Cart - Nrs.{totalAmount}</div>
-     
         </section>
       </section>
     </div>
