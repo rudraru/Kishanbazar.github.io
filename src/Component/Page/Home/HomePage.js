@@ -34,7 +34,7 @@ const HomePage = () => {
       <div>
         <h3>नेपाली माटो,नेपाली उत्पादन</h3>
         <h2>स्वस्त तरकारी, स्वस्त जीवन</h2>
-        <p>Rethinking the future of fresh produce consumption into your kitchen.</p>
+        <h6>Rethinking the future of fresh produce consumption into your kitchen.</h6>
         <Link to='/Aboutus'>
         <button>Read more</button>
         </Link>

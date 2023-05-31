@@ -6,12 +6,27 @@ import './Navigation.css';
 
 function Navigation() {
   const [location, setLocation] = useState('Machhapokhari, Tokha');
+  const [isSticky, setIsSticky] = useState(false);
+  const [showMobileMenu, setShowMobileMenu] = useState(false); // Added state variable
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const stickyOffset = document.querySelector('.Navigation').offsetTop;
+      setIsSticky(window.pageYOffset > stickyOffset);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
   const [cartItemsState, setCartItemsState] = useState(
     JSON.parse(localStorage.getItem('cartItems')) || []
   );
   const [cartCount, setCartCount] = useState(0);
   const [totalAmount, setTotalAmount] = useState(0);
-  const [showMobileMenu, setShowMobileMenu] = useState(false);
+
 
   useEffect(() => {
     const uniqueProductIds = new Set(cartItemsState.map((item) => item.id));
@@ -95,11 +110,11 @@ function Navigation() {
 
   return (
     <div className={`app ${showMobileMenu ? 'mobile-menu-active' : ''}`}>
-      <nav>
-        <div className="nav-container">
-          <div className="menu-icon" onClick={handleMobileMenuToggle}>
-            <FaBars />
-          </div>
+    <nav>
+      <div className="nav-container">
+        <div className="menu-icon" onClick={handleMobileMenuToggle}>
+          <FaBars />
+        </div>
           <div className="social-media">
             <div className="icon">
               <Link to="https://www.facebook.com">
@@ -132,8 +147,8 @@ function Navigation() {
         </div>
       </nav>
 
-      <section>
-        <select value={location} onChange={handleLocationChange}>
+      <section className={`Navigation ${isSticky ? 'sticky' : ''}`}>
+        <select  className='location' value={location} onChange={handleLocationChange}>
           <option>Machhapokhari, Tokha</option>
         </select>
 
@@ -170,7 +185,7 @@ function Navigation() {
             <FaShoppingCart className="cart-icon" />
             <span className="cart-count">{cartCount}</span>
           </div>
-          <div className="my-cart">My Cart - Nrs.{totalAmount}</div>
+          Item - Nrs.{totalAmount}
         </section>
       </section>
     </div>

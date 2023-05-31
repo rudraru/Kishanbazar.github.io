@@ -1,12 +1,56 @@
 /* Navigation.css */
 
+
+.app {
+  position: relative;
+
+}
+
+
+.mobile-menu-active .nav-container {
+  right: 0;
+}
+
+
 .nav-container {
   display: flex;
-  align-items: center;
+
   justify-content: space-between;
   background-color: rgb(235, 151, 24);
   padding: 10px;
+
 }
+
+
+.Navigation {
+  position: relative;
+  z-index: 100;
+  transition: background-color 0.3s ease;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.Navigation.sticky {
+  position: fixed;
+  top: 0px;
+  width: 100%;
+  background-color: #fff; /* Adjust the background color as needed */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add a box shadow if desired */
+}
+
+.Navigation.sticky .location {
+  display: none;
+}
+
+/* Media query for all screens */
+@media screen {
+  .Navigation {
+    justify-content: center;
+  }
+}
+
+
 
 .nav-links {
   list-style: none;
@@ -158,7 +202,7 @@ section {
 .cart {
   display: flex;
   align-items: center;
-  background-color: rgb(235, 151, 24);
+  background-color: rgb(233, 232, 231);
   padding: 8px;
   border-radius: 50px;
   margin-left: 9%;
@@ -174,7 +218,7 @@ section {
 
 .cart-icon {
   font-size: 20px;
-  color: #555;
+  color: #000000;
 }
 
 .cart-count {
@@ -217,7 +261,7 @@ section {
 /* Media queries */
 
 /* Small screens (maximum width: 767px) */
-@media (max-width: 767px) {
+@media (max-width: 765px) {
   .nav-container {
     flex-direction: column;
     align-items: flex-start;
@@ -244,15 +288,28 @@ section {
     border-radius: 1px;
     margin-right: 10px;
     width: 200px;
+    margin-left: 10px;
   } 
 
+.location{
+padding: 10px;
+  width: 155px;
+}
 
-  .my-cart{
-    margin-top: 10px;
-    font-size: 13px;
-    margin-left: 0;
+.cart{
+width: 195px;
+padding: 1px;
+font-size: 14px;
 
-  }
+}
+
+.cart-container{
+top: -7px;
+
+  margin-left: -10px;
+}
+
+
 
 
 }
@@ -336,16 +393,16 @@ section {
 
   .cart {
     margin-left: 0;
-    margin-top: 10px;
+    margin-top: 5px;
   }
 
   section {
-    margin-right: 0;
+  display: grid;
     flex-wrap: wrap;
   }
 
   select {
-    margin: 2px 0;
+    margin: 1px 0;
     width: 100%;
     
   }
@@ -358,6 +415,10 @@ section {
     margin-left: 0;
     margin-top: 20px;
     flex-direction: column;
+  }
+
+  .Navigation.sticky .location {
+    display: none;
   }
 }
 
@@ -384,7 +445,7 @@ section {
 
   .cart {
     margin-top: 10px;
-margin-left: 13px;
+margin-left: 3px;
 
   }
 }
@@ -416,12 +477,14 @@ margin-left: 13px;
 
 
 
+
+
 @media (max-width: 825px) {
   .searchbox {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    margin-top: 10px;
+    margin-top: 5px;
    
  
   }
@@ -431,14 +494,18 @@ margin-left: 13px;
   }
 
   .search-results {
-    max-height: 200px;
+    max-height: 150px;
     overflow-y: auto;
     margin-top: 10px;
   }
 
   .cart {
-    margin-top: 10px;
-margin-left: 5px;
+    margin-top: 0px;
+margin-left: 0px;
 
+  }
+
+  .Navigation .location {
+    display: none;
   }
 }

@@ -11,7 +11,8 @@
   const Product = ({ product, handleAddToCart, handleOrder }) => {
     const [quantity, setQuantity] = useState(1);
     const [arrowUp, setArrowUp] = useState(false);
-
+    
+    
     const handleIncreaseQuantity = () => {
       setQuantity(quantity + 1);
     };
@@ -77,9 +78,44 @@
 
 
   const Products = ({ handleAddToCart, handleOrder }) => {
+
+    const [selectedCategory, setSelectedCategory] = useState("");
+    const handleCategorySelect = (category) => {
+      setSelectedCategory(category);
+    };
+  
+  
+    const filteredProducts = selectedCategory
+      ? fruits.filter((product) => product.category === selectedCategory)
+      : fruits;
+
+
     return (
-      <div className="products">
-        {fruits.map((product) => (
+    <>
+<div className="category-selector">
+  <div className="category-buttons">
+    <label htmlFor="category">Filter by Category:</label>
+    {['Fruit', 'Vegetable', 'Leafy', 'Grossary'].map((category) => (
+      <button
+        key={category}
+        className={selectedCategory === category ? 'selected' : ''}
+        onClick={() => handleCategorySelect(category)}
+      >
+        {category}
+      </button>
+    ))}
+     <button className="order-now-btn" onClick={handleOrder}>
+    My Cart
+  </button>
+  </div>
+ 
+</div>
+
+
+
+          <div className="products">
+        
+        {filteredProducts.map((product) => (
           <Product
             key={product.id}
             product={product}
@@ -88,6 +124,8 @@
           />
         ))}
       </div>
+      </>
+
     );
   };
 
