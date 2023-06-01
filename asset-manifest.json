@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/Kishanbazar.github.io/static/css/main.03376963.css",
+    "main.js": "/Kishanbazar.github.io/static/js/main.89c8721d.js",
+    "static/js/787.28cb0dcd.chunk.js": "/Kishanbazar.github.io/static/js/787.28cb0dcd.chunk.js",
+    "static/media/Veglady.png": "/Kishanbazar.github.io/static/media/Veglady.319c615a874bbad8e814.png",
+    "index.html": "/Kishanbazar.github.io/index.html",
+    "main.03376963.css.map": "/Kishanbazar.github.io/static/css/main.03376963.css.map",
+    "main.89c8721d.js.map": "/Kishanbazar.github.io/static/js/main.89c8721d.js.map",
+    "787.28cb0dcd.chunk.js.map": "/Kishanbazar.github.io/static/js/787.28cb0dcd.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.03376963.css",
+    "static/js/main.89c8721d.js"
+  ]
+}
