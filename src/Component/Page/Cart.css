@@ -258,3 +258,37 @@
   transform: translateY(2px);
   box-shadow: none;
 }
+
+
+label {
+  display: flex;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+button {
+  padding: 8px 16px;
+  margin: 0 10px;
+  font-size: 16px;
+  background-color: #ffffff;
+  border: 1px solid #dddddd;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #ffd000;
+}
+
+button.selected {
+
+  font-weight: bold;
+}
+
+
+
+.order-now-btn:hover {
+  background-color: #111fe9;
+  color: #f2f2f2;
+}

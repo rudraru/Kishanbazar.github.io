@@ -67,6 +67,7 @@
   flex-direction: column;
   align-items: center;
   padding: 20px;
+  
 }
 
 h2 {
@@ -80,21 +81,59 @@ h2 {
   margin-bottom: 20px;
 }
 
-.category-selector button {
+.category-selector1 button {
   margin: 0 10px;
   padding: 8px 12px;
   font-size: 16px;
-  background-color: #e0e0e0;
+  background-color: #ffffff;
+  color: black;
   border: none;
   border-radius: 4px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  /* Add 3D effect */
+  perspective: 800px;
+  transform-style: preserve-3d;
 }
 
-.category-selector button.selected {
-  background-color: #888888;
+.category-selector1 button.selected {
+  background-color: #e56700;
   color: #ffffff;
+  /* Add box shadow for selected button */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
+
+.category-selector1 button:hover {
+  background-color: #ec691e;
+  /* Adjust box shadow on hover */
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
+  transform: translateZ(10px);
+}
+
+.category-selector1 button:active {
+  /* Apply pressed effect */
+  transform: translateZ(5px) scale(0.95);
+  /* Add active styles */
+  background-color: #ff8c00;
+  /* Add clicked animation */
+  animation: clicked-animation 0.2s linear;
+}
+
+@keyframes clicked-animation {
+  0% {
+    transform: translateZ(5px) scale(0.95);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  }
+  50% {
+    transform: translateZ(5px) scale(0.9);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
+  }
+  100% {
+    transform: translateZ(5px) scale(0.95);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  }
+}
+
 
 .product-container {
   display: flex;
@@ -111,6 +150,7 @@ h2 {
   padding: 10px;
   border: 1px solid #e0e0e0;
   border-radius: 4px;
+  cursor: pointer;
 }
 
 .fruit h3 {
@@ -121,8 +161,8 @@ h2 {
 .fruit img {
   width: 150px;
   height: 150px;
-  object-fit: cover;
-  border-radius: 50%;
+  object-fit: contain;
+  border-radius: 2  0%;
   background-size: contain;
 }
 
@@ -177,9 +217,9 @@ h2 {
   }
 
   .fruit img {
-    width: 80px;
-    height: 80px;
-    object-fit: cover;
+    width: 90px;
+    height: 90px;
+    object-fit: contain;
     border-radius: 50%;
   }
 
@@ -305,4 +345,77 @@ margin-right: 35%;
     padding: 6px 10px;
     font-size: 14px;
   }
+}
+
+
+
+.fruit {
+  position: relative;
+}
+
+.shop-now-button {
+  display: none;
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 8px 16px;
+  background-color: #ff9900;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.fruit:hover .shop-now-button {
+  display: block;
+  opacity: 1;
+}
+
+.fruit:hover img,
+.fruit:hover h3,
+.fruit:hover p {
+  opacity: 0.7;
+}
+
+.fruit:hover img.letter-animation,
+.fruit:hover h3.letter-animation,
+.fruit:hover p.letter-animation {
+  opacity: 1;
+}
+
+
+.fruit:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s ease-in-out;
+}
+
+
+.category-selector1 {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.category-selector1 button {
+  padding: 8px 16px;
+  margin: 0 4px;
+  font-size: 16px;
+  background-color: #ffffff;
+  border: 1px solid #dddddd;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.category-selector1 button:hover {
+  background-color: #87be1f;
+}
+
+.category-selector1 button.selected {
+  background-color: #6bc934;
+  font-weight: bold;
 }

@@ -7,7 +7,7 @@ import './Navigation.css';
 function Navigation() {
   const [location, setLocation] = useState('Machhapokhari, Tokha');
   const [isSticky, setIsSticky] = useState(false);
-  const [showMobileMenu, setShowMobileMenu] = useState(false); // Added state variable
+
 
   useEffect(() => {
     const handleScroll = () => {
@@ -104,17 +104,13 @@ function Navigation() {
     };
   }, []);
 
-  const handleMobileMenuToggle = () => {
-    setShowMobileMenu(!showMobileMenu);
-  };
+
 
   return (
-    <div className={`app ${showMobileMenu ? 'mobile-menu-active' : ''}`}>
+    <div>
     <nav>
       <div className="nav-container">
-        <div className="menu-icon" onClick={handleMobileMenuToggle}>
-          <FaBars />
-        </div>
+       
           <div className="social-media">
             <div className="icon">
               <Link to="https://www.facebook.com">
@@ -133,15 +129,15 @@ function Navigation() {
             </div>
           </div>
 
-          <ul className={`nav-links ${showMobileMenu ? 'mobile-menu-active' : ''}`}>
+          <ul className={`nav-links`}>
             <li>
-              <Link to="#">Offer</Link>
+              <Link to="/Offer">Offer</Link>
             </li>
             <li>
-              <Link to="#">Wishlist</Link>
+              <Link to="/offer">Wishlist</Link>
             </li>
             <li>
-              <Link to="#">Login/Signup</Link>
+              <Link to="#">Login</Link>
             </li>
           </ul>
         </div>

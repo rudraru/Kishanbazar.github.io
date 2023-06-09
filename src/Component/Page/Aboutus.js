@@ -6,17 +6,35 @@ const AboutUs = () => {
     <div className="about-us-container">
       <h2>About Us</h2>
       <div className="image-container">
-        <img
-          src="https://merokishan.com/uploads/aboutimages/location.png"
-          alt="About Us"
-          className="about-us-image"
-        />
-        <img
-          src="https://merokishan.com/uploads/aboutimages/impact-web.jpg"
-          alt="About Us"
-          className="about-us-image"
-        />
-      </div>
+  <img
+    src="https://merokishan.com/uploads/aboutimages/location.png"
+    alt="About Us"
+    className="about-us-image right-image"
+  />
+
+  <div className="service-container">
+    <img
+      src="https://merokishan.com/uploads/aboutimages/impact-web.jpg"
+      alt="Service"
+      className="service-image"
+    />
+  </div>
+
+
+          <div className="service-description">
+            <h3>Our Services</h3>
+            <p>
+              We provide a wide range of services to our customers, including:
+              <ul>
+                <li>High-quality produce sourcing</li>
+                <li>Fast and reliable delivery</li>
+                <li>Competitive pricing</li>
+                <li>Excellent customer support</li>
+              </ul>
+            </p>
+          </div>
+        </div>
+
       <div className="team-container">
         <div className="team-member">
           <div className="team-card">
@@ -28,11 +46,8 @@ const AboutUs = () => {
               />
             </div>
             <div className="team-card-content">
-              <h3>Director</h3>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
-              
-              </p>
+              <h3>Amrit Basnet</h3>
+              <p>Founder of Kishan ko Bazar</p>
             </div>
           </div>
         </div>
@@ -46,17 +61,15 @@ const AboutUs = () => {
               />
             </div>
             <div className="team-card-content">
-              <h3>Front-End Develover</h3>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
-        
-              </p>
+              <h3>Aayush Kharel</h3>
+              <p>Front-End Developer</p>
             </div>
           </div>
         </div>
-      </div>
-    </div>
+</div>
+</div>
   );
 };
 
 export default AboutUs;
+

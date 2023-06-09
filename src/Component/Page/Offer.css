@@ -1,0 +1,19 @@
+.offer {
+    text-align: center;
+    margin-top: 10px;
+    padding: 200px;
+    background-color: #f8f8f8;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+  
+  .offer h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .offer p {
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+  

@@ -16,6 +16,9 @@ import TermsAndConditionsPage from './Component/Page/Tac';
 import Navigation from './Component/Page/Navigation';
 import PrivateDashboard from './Component/PrivateRoutes/PrivateDashboard';
 import PLogin from './Component/PrivateRoutes/page/Login';
+import FruitsForm from './Component/Page/FruitsForm';
+import ArrayComponent from './arraycomponent';
+import Offer from './Component/Page/Offer';
 
 function App() {
   return (
@@ -28,6 +31,7 @@ function App() {
         <Route exact path="/SignIn" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/fruits" element={<FruitList />} />
+        <Route path="/fruitform" element={<FruitsForm/>} />
         <Route exact path="/fruits/:fruitId" element={<FruitDetails />} />
         <Route exact path="/fruits/:fruitId/:size" element={<FruitDetails />} />
         <Route path="/aboutus/tac" element={<TermsAndConditionsPage />} />
@@ -35,7 +39,9 @@ function App() {
         <Route path="/contactus" element={<ContactUs />} />
         <Route path="/order-summary" element={<SummaryPage />} />
         <Route path="/navcart" element={<NavCart />} />
+        <Route path="/array" element={<ArrayComponent/>} />
         <Route path="/trmsandcdn" element={<TermsAndConditionsPage />} />
+        <Route path='/offer' element={<Offer/>} />
       </Routes>
       <Footer />
     </>

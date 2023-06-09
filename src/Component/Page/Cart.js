@@ -63,14 +63,14 @@
         {/* <button className="place-order-btn" onClick={handleOrder}>
           Place Order
         </button> */}
-        <button className="arrow-btn" onClick={handleArrowClick}>
+        {/* <button className="arrow-btn" onClick={handleArrowClick}>
           {arrowUp ? <FaArrowUp /> : <FaArrowDown />}
         </button>
         {arrowUp && (
           <button className="order-now-btn" onClick={handleOrder}>
           My Cart
           </button>
-        )}
+        )} */}
       </div>
     );
   };
@@ -95,7 +95,7 @@
 <div className="category-selector">
   <div className="category-buttons">
     <label htmlFor="category">Filter by Category:</label>
-    {['Fruit', 'Vegetable', 'Leafy', 'Grossary'].map((category) => (
+    {['Fruit', 'Vegetable', 'Leafy', 'Pickle'].map((category) => (
       <button
         key={category}
         className={selectedCategory === category ? 'selected' : ''}
