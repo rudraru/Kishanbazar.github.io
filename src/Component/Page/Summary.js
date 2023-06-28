@@ -5,7 +5,7 @@ import { useNavigate, useParams, useLocation } from 'react-router-dom';
 import axios from 'axios';
 import './Summary.css';
 
-const SummaryPage = () => {
+const SummaryPage = (fruits) => {
   const [myOrderId, setMyOrderId] = useState(null);
   const [cartItemsWithDetails, setCartItemsWithDetails] = useState([]);
   const { customerName } = useParams();

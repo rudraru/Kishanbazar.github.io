@@ -4,38 +4,31 @@ import './Aboutus.css';
 const AboutUs = () => {
   return (
     <div className="about-us-container">
-      <h2>About Us</h2>
-      <div className="image-container">
-  <img
-    src="https://merokishan.com/uploads/aboutimages/location.png"
-    alt="About Us"
-    className="about-us-image right-image"
-  />
+      <h2 className="about-us-title">About Us</h2>
 
-  <div className="service-container">
-    <img
-      src="https://merokishan.com/uploads/aboutimages/impact-web.jpg"
-      alt="Service"
-      className="service-image"
-    />
-  </div>
-
-
+      <div className="services-container">
+        <div className="service-container">
+          <h3 className="service-title">Our Services</h3>
           <div className="service-description">
-            <h3>Our Services</h3>
             <p>
-              We provide a wide range of services to our customers, including:
-              <ul>
-                <li>High-quality produce sourcing</li>
-                <li>Fast and reliable delivery</li>
-                <li>Competitive pricing</li>
-                <li>Excellent customer support</li>
-              </ul>
+              At Kishan ko Bazar, we are committed to providing top-notch services to our customers. Our range of services includes:
             </p>
+            <ul className="service-list">
+              <li>High-quality produce sourcing</li>
+              <li>Fast and reliable delivery</li>
+              <li>Competitive pricing</li>
+              <li>Excellent customer support</li>
+            </ul>
           </div>
+          <img
+            src="https://merokishan.com/uploads/aboutimages/impact-web.jpg"
+            alt="Service"
+            className="service-image"
+          />
         </div>
-
+      </div>
       <div className="team-container">
+        <h3 className="team-title">Our Team</h3>
         <div className="team-member">
           <div className="team-card">
             <div className="team-card-image">
@@ -46,8 +39,8 @@ const AboutUs = () => {
               />
             </div>
             <div className="team-card-content">
-              <h3>Amrit Basnet</h3>
-              <p>Founder of Kishan ko Bazar</p>
+              <h4 className="team-member-name">Amrit Basnet</h4>
+              <p className="team-member-role">Founder of Kishan ko Bazar</p>
             </div>
           </div>
         </div>
@@ -61,15 +54,14 @@ const AboutUs = () => {
               />
             </div>
             <div className="team-card-content">
-              <h3>Aayush Kharel</h3>
-              <p>Front-End Developer</p>
+              <h4 className="team-member-name">Aayush Kharel</h4>
+              <p className="team-member-role">Front-End Developer</p>
             </div>
           </div>
         </div>
-</div>
-</div>
+      </div>
+    </div>
   );
 };
 
 export default AboutUs;
-
