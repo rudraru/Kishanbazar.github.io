@@ -48,7 +48,7 @@ const SummaryPage = () => {
       return;
     }
 
-    setIsLoading(true); // Enable loading state
+ 
 
     // Create the invoice object
     const invoice = {
