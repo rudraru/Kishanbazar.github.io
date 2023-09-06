@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/Kishanbazar.github.io/static/css/main.3cead7fa.css",
-    "main.js": "/Kishanbazar.github.io/static/js/main.5917c1cb.js",
-    "static/js/787.28cb0dcd.chunk.js": "/Kishanbazar.github.io/static/js/787.28cb0dcd.chunk.js",
-    "static/media/Veglady.png": "/Kishanbazar.github.io/static/media/Veglady.319c615a874bbad8e814.png",
-    "index.html": "/Kishanbazar.github.io/index.html",
-    "main.3cead7fa.css.map": "/Kishanbazar.github.io/static/css/main.3cead7fa.css.map",
-    "main.5917c1cb.js.map": "/Kishanbazar.github.io/static/js/main.5917c1cb.js.map",
-    "787.28cb0dcd.chunk.js.map": "/Kishanbazar.github.io/static/js/787.28cb0dcd.chunk.js.map"
+    "main.css": "/ECO-UI/static/css/main.c07a83a0.css",
+    "main.js": "/ECO-UI/static/js/main.6c195113.js",
+    "static/js/787.28cb0dcd.chunk.js": "/ECO-UI/static/js/787.28cb0dcd.chunk.js",
+    "static/media/Veglady.png": "/ECO-UI/static/media/Veglady.319c615a874bbad8e814.png",
+    "index.html": "/ECO-UI/index.html",
+    "main.c07a83a0.css.map": "/ECO-UI/static/css/main.c07a83a0.css.map",
+    "main.6c195113.js.map": "/ECO-UI/static/js/main.6c195113.js.map",
+    "787.28cb0dcd.chunk.js.map": "/ECO-UI/static/js/787.28cb0dcd.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.3cead7fa.css",
-    "static/js/main.5917c1cb.js"
+    "static/css/main.c07a83a0.css",
+    "static/js/main.6c195113.js"
   ]
 }
