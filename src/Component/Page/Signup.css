@@ -80,7 +80,7 @@
 
 
 
-<<<<<<< HEAD
+
   .signup-container {
     display: flex;
     flex-direction: column;
@@ -184,7 +184,7 @@
     .signup-container .success-popup p {
       font-size: 1rem;
     }
-=======
+
 
 
   .signup-container {
@@ -197,7 +197,7 @@
     box-shadow: 0 0 10px #ccc;
     width: 400px;
     margin: 0 auto;
->>>>>>> e671049f767068883b9eb89b74fafc77cbb1cef5
+
   }
   
   h1 {
@@ -261,6 +261,4 @@
     to { opacity: 0; }
   }
   
-
-
-  
+  }

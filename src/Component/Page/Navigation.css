@@ -1,7 +1,7 @@
-<<<<<<< HEAD
+/* <<<<<<< HEAD
 /* Navigation.css */
 
-=======
+
 /* 
 >>>>>>> e671049f767068883b9eb89b74fafc77cbb1cef5
 
@@ -448,7 +448,7 @@ top: -7px;
   .searchboxfilter {
     width: 10%;
   }
-<<<<<<< HEAD
+
 
   .search-results {
     max-height: 200px;
@@ -470,7 +470,7 @@ margin-left: 3px;
     display: flex;
     align-items: center;
     margin-top: 10px;
-=======
+  }
   .Navitem a:before {
     content: "";
     position: absolute;
@@ -516,7 +516,7 @@ margin-left: 3px;
 
 
 
-   .Navitem {
+/* .Navitem {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -529,7 +529,7 @@ margin-left: 3px;
         position: relative;
     
 
-   }
+   } */
    .nav {
     display: flex;
     justify-content: space-between;
@@ -627,7 +627,7 @@ margin-left: 3px;
       border-radius: 3px;
       cursor: pointer;
     }
->>>>>>> e671049f767068883b9eb89b74fafc77cbb1cef5
+
   }
 
   .searchboxfilter {
@@ -679,4 +679,5 @@ margin-left: 0px;
   .Navigation .location {
     display: none;
   }
+}
 }
