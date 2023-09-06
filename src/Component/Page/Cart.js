@@ -3,7 +3,7 @@
   import "./Cart.css";
 
   import { FaCartPlus, FaArrowDown, FaArrowUp } from "react-icons/fa";
-  import { useNavigate } from "react-router-dom";
+  import { Link, useNavigate } from "react-router-dom";
   import { toast, ToastContainer } from "react-toastify";
   import "react-toastify/dist/ReactToastify.css";
   import fruits from "./Card";
@@ -173,15 +173,21 @@
     };
 
     return (
+
+      <div>
+      <Link className='Backclass' to='/'>
+     Home   /
+  </Link>
+  <Link className='Backclass' to='/fruits'>
+  fruits 
+  </Link>
+     
       <div className="cart-container">
-        <div className="top-message">
-          <p>
-          Click the down arrow to go the Ordered Cart page. Thank you.
-        </p>
-        </div>
+       
         <Products handleAddToCart={handleAddToCart} handleOrder={handleOrder} />
 
         <ToastContainer />
+      </div>
       </div>
     );
   };

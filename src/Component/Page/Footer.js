@@ -24,16 +24,16 @@ function Footer() {
         <div className="row">
           <ul>
             <li>
-              <Link to="#">Contact us</Link>
+              <Link to="/contactus">Contact us</Link>
             </li>
             <li>
-              <Link to="#">Our Services</Link>
+              <Link to="Aboutus">Our Services</Link>
             </li>
             <li>
               <Link to="#">Privacy Policy</Link>
             </li>
             <li>
-              <Link to="#">Terms &amp; Conditions</Link>
+              <Link to="/trmsandcdn">Terms &amp; Conditions</Link>
             </li>
             <li>
               <Link to="#">Career</Link>

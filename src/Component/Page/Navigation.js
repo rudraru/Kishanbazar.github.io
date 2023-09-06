@@ -104,6 +104,7 @@ function Navigation() {
     };
   }, []);
 
+  
 
 
   return (
@@ -143,6 +144,8 @@ function Navigation() {
         </div>
       </nav>
 
+      
+
       <section className={`Navigation ${isSticky ? 'sticky' : ''}`}>
         <select  className='location' value={location} onChange={handleLocationChange}>
           <option>Machhapokhari, Tokha</option>
@@ -155,13 +158,17 @@ function Navigation() {
             placeholder="Search Fruits"
             value={searchTerm}
             onChange={handleSearch}
+            
           />
+          
           <div className="search-container" ref={searchRef}>
-            {searchTerm.length > 0 && (
-              <button className="clear-button" onClick={handleClear}>
-                X
-              </button>
-            )}
+            {/* {searchTerm.length > 0 && (
+             
+             <button className="clear-button" onClick={handleClear}>
+             X
+           </button>
+           
+            )} */}
 
             {searchTerm.length > 1 && (
               <div className="search-results">
@@ -175,6 +182,9 @@ function Navigation() {
             )}
           </div>
         </section>
+
+
+        
 
         <section className="cart">
           <div className="cart-container">

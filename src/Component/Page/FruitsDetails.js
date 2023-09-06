@@ -1,5 +1,5 @@
 import React from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams,Link } from 'react-router-dom';
 
 import fruits from './Card';
 
@@ -12,6 +12,14 @@ const FruitDetails = () => {
   }
 
   return (
+    <div>
+    <Link className='Backclass' to='/'>
+   Home  /
+</Link> 
+<Link className='Backclass' to='/fruits'>
+FruitsDetails
+</Link>
+
     <div className="fruit-details">
       <h1 className="fruit-details__title">Fruit Details</h1>
       <div className="fruit-card">
@@ -21,6 +29,7 @@ const FruitDetails = () => {
         <p className="fruit-card__price">Price: ${fruit.price}</p>
         {/* Add other fruit details as needed */}
       </div>
+    </div>
     </div>
   );
 };

@@ -1,8 +1,17 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const TermsAndConditionsPage = () => {
   return (
+   
+    
     <div>
+       <Link className='Backclass' to='/'>
+       Home   /
+    </Link>
+    <Link className='Backclass' to='/trmsandcdn'>
+       TermsAndConditions
+    </Link>
       <h1>Terms and Conditions</h1>
       <p>Welcome to Kishan ko bazar wholesale Shop. By accessing or using our website, you agree to be bound by the following terms and conditions:</p>
       <h2>1. Use of Website</h2>
@@ -21,6 +30,7 @@ const TermsAndConditionsPage = () => {
       <p>We reserve the right to modify or replace these terms and conditions at any time without notice. By continuing to access or use our website after any revisions become effective, you agree to be bound by the revised terms. If you do not agree to the new terms, you are no longer authorized to use the website.</p>
     </div>
   );
+  
 };
 
 export default TermsAndConditionsPage;

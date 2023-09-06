@@ -17,8 +17,9 @@ import Navigation from './Component/Page/Navigation';
 import PrivateDashboard from './Component/PrivateRoutes/PrivateDashboard';
 import PLogin from './Component/PrivateRoutes/page/Login';
 import FruitsForm from './Component/Page/FruitsForm';
-import ArrayComponent from './arraycomponent';
+
 import Offer from './Component/Page/Offer';
+// import NepalMap from './NepalMap';
 
 function App() {
   return (
@@ -33,13 +34,13 @@ function App() {
         <Route path="/fruits" element={<FruitList />} />
         <Route path="/fruitform" element={<FruitsForm/>} />
         <Route exact path="/fruits/:fruitId" element={<FruitDetails />} />
-        <Route exact path="/fruits/:fruitId/:size" element={<FruitDetails />} />
+  
         <Route path="/aboutus/tac" element={<TermsAndConditionsPage />} />
         <Route path="/aboutus" element={<AboutUs />} />
         <Route path="/contactus" element={<ContactUs />} />
         <Route path="/order-summary" element={<SummaryPage />} />
         <Route path="/navcart" element={<NavCart />} />
-        <Route path="/array" element={<ArrayComponent/>} />
+        {/* <Route path="/nepalmap" element={<NepalMap/>} /> */}
         <Route path="/trmsandcdn" element={<TermsAndConditionsPage />} />
         <Route path='/offer' element={<Offer/>} />
       </Routes>

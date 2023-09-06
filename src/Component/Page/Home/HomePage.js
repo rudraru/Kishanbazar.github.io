@@ -1,7 +1,7 @@
 import { React, useState, useEffect } from 'react';
 import './Home.css';
 import '../../Page/Aboutus.css';
-import FruitsForm from '../FruitsForm';
+
 import fruits from '../Card';
 import { Link } from 'react-router-dom';
 
@@ -122,7 +122,7 @@ const HomePage = () => {
           ))}
         </div>
       </section>
-      <Link className="shopbtn fade-in" to="/shop">
+      <Link className="shopbtn fade-in" to="/fruits">
         <button>Go To Shop Page</button>
       </Link>
     </div>

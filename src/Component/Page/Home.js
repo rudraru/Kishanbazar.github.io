@@ -43,14 +43,7 @@ function Homepage() {
         <div className={styles.chartItemPercentage}>70%</div>
       </div>
     </div>
-    <ul className={styles.whyChooseUsList}>
-      <li><span className={styles.whyChooseUsBullet}></span>We source our produce directly from local farmers, ensuring freshness and quality.</li>
-      <li><span className={styles.whyChooseUsBullet}></span>We offer a wide variety of fruits, vegetables, and other produce at competitive prices.</li>
-      <li><span className={styles.whyChooseUsBullet}></span>Our friendly staff is always available to answer your questions and help you find what you need.</li>
-      <li><span className={styles.whyChooseUsBullet}></span>We prioritize sustainability and environmentally friendly practices in our operations.</li>
-      <li><span className={styles.whyChooseUsBullet}></span>Low prices guaranteed.</li>
-      <li><span className={styles.whyChooseUsBullet}></span>Explore our branches for more options.</li>
-    </ul>
+  
   </div>
 </section>
 

@@ -1,9 +1,23 @@
 import React from 'react';
 import './Aboutus.css';
-
+import { Link } from 'react-router-dom';
 const AboutUs = () => {
   return (
+
+<div>
+
+<Link className='Backclass' to='/'>
+       Home   /
+    </Link>
+    <Link className='Backclass' to='/Aboutus'>
+      Aboutus
+    </Link>
+
+
     <div className="about-us-container">
+
+
+
       <h2 className="about-us-title">About Us</h2>
 
       <div className="services-container">
@@ -60,6 +74,7 @@ const AboutUs = () => {
           </div>
         </div>
       </div>
+    </div>
     </div>
   );
 };
