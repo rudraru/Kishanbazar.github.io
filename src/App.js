@@ -11,7 +11,7 @@ import AboutUs from './Component/Page/Aboutus';
 import ContactUs from './Component/Page/Contactus';
 import FruitDetails from './Component/Page/FruitsDetails';
 import SummaryPage from './Component/Page/Summary';
-import NavCart from './Component/Page/Bcart';
+
 import TermsAndConditionsPage from './Component/Page/Tac';
 import Navigation from './Component/Page/Navigation';
 import PrivateDashboard from './Component/PrivateRoutes/PrivateDashboard';
@@ -23,23 +23,23 @@ function App() {
   return (
     <div>
       <Navigation />
+   
       <Routes>
         <Route path="/private/*" element={<PrivateDashboard />} />
-        <Route path='/private/login' element={<PLogin/>}/>
+        <Route path="/private/login" element={<PLogin />} />
         <Route path="/" element={<Home />} />
-        <Route exact path="/SignIn" element={<Login />} />
+        <Route path="/SignIn" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/fruits" element={<FruitList />} />
-        <Route path="/fruitform" element={<FruitsForm/>} />
-        <Route exact path="/fruits/:fruitId" element={<FruitDetails />} />
-
+        <Route path="/fruitform" element={<FruitsForm />} />
+        <Route path="/fruits/:fruitId" element={<FruitDetails />} />
         <Route path="/aboutus/tac" element={<TermsAndConditionsPage />} />
         <Route path="/aboutus" element={<AboutUs />} />
         <Route path="/contactus" element={<ContactUs />} />
         <Route path="/order-summary" element={<SummaryPage />} />
-        <Route path="/navcart" element={<NavCart />} />
+     
         <Route path="/trmsandcdn" element={<TermsAndConditionsPage />} />
-        <Route path='/offer' element={<Offer/>} />
+        <Route path="/offer" element={<Offer />} />
       </Routes>
       <Footer />
     </div>

@@ -1,7 +1,4 @@
-
 /* Navigation.css */
-
-
 
 
 .app {
@@ -23,14 +20,6 @@
   padding: 10px;
 
 }
-
-.clear-button {
-  margin-left: 335px;
-  margin-bottom: 10px;
-  width: auto;
-  height: auto;
-}
-
 
 
 .Navigation {
@@ -448,7 +437,6 @@ top: -7px;
     width: 10%;
   }
 
-
   .search-results {
     max-height: 200px;
     overflow-y: auto;
@@ -469,164 +457,6 @@ margin-left: 3px;
     display: flex;
     align-items: center;
     margin-top: 10px;
-  }
-  .Navitem a:before {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 2px;
-    bottom: 0;
-    left: 0;
-    background-color: yellow;
-    visibility: hidden;
-    transform: scaleX(0);
-    transition: all 0.2s ease-in-out;
-    top: -2px; /* Updated to position line above text */
-  /* }
-  
-  .Navitem a:hover:before {
-    visibility: visible;
-    transform: scaleX(1);
-  }
-  
-  .Navitem a:after {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 2px;
-    bottom: -2px;
-    left: 0;
-    background-color: lightgreen; /* Updated to light green */
-    /* visibility: hidden;
-    transform: scaleX(0);
-    transition: all 0.2s ease-in-out;
-  }
-  
-  .Navitem a:hover:after {
-    visibility: visible;
-    transform: scaleX(1);
-    top: 100%; Updated to position line below text */
-  /* }
-   */
-  
-
-
-
-
-
-
-/* .Navitem {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0;
-    margin: 0;
-    list-style-type: none;
-
-   
-        width: 35rem;
-        position: relative;
-    
-
-   } */
-   .nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #f2f2f2;
-    padding: 10px;
-  }
-  
-  .toggle-button {
-    display: none;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 24px;
-    cursor: pointer;
-  }
-  
-  .toggle-line {
-    width: 24px;
-    height: 2px;
-    background-color: #333;
-    transition: all 0.3s ease-in-out;
-  }
-  
-  .toggle-line.active:nth-child(1) {
-    transform: rotate(45deg) translate(5px, 5px);
-  }
-  
-  .toggle-line.active:nth-child(2) {
-    opacity: 0;
-  }
-  
-  .toggle-line.active:nth-child(3) {
-    transform: rotate(-45deg) translate(5px, -5px);
-  }
-  
-  @media (max-width: 768px) {
-    .toggle-button {
-      display: flex;
-    }
-    
-    .nav-items {
-      display: none;
-      flex-direction: column;
-      list-style: none;
-      margin: 0;
-      padding: 0;
-      position: absolute;
-      top: 60px;
-      left: 0;
-      right: 0;
-      background-color: #f2f2f2;
-      z-index: 1;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-    }
-  
-    .nav-items.show-menu {
-      display: flex;
-    }
-  
-    .nav-item {
-      margin: 10px 0;
-    }
-  
-    .nav-item a {
-      display: block;
-      padding: 10px;
-      text-decoration: none;
-      color: #333;
-    }
-    
-    .search-box {
-      margin-top: 10px;
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-      align-items: center;
-      width: 100%;
-    }
-  
-    .search-box input[type="text"] {
-      width: 80%;
-      padding: 5px;
-      font-size: 16px;
-      border: none;
-      border-radius: 3px;
-    }
-  
-    .search-box button[type="submit"] {
-      width: 15%;
-      padding: 5px;
-      font-size: 16px;
-      background-color: #333;
-      color: #fff;
-      border: none;
-      border-radius: 3px;
-      cursor: pointer;
-    }
-
   }
 
   .searchboxfilter {
@@ -678,5 +508,4 @@ margin-left: 0px;
   .Navigation .location {
     display: none;
   }
-}
 }

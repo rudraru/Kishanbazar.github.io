@@ -1,28 +1,56 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { FaFacebook, FaTwitter, FaInstagram, FaShoppingCart } from 'react-icons/fa';
-import './Navigation.css';
 import Fruits from '../Page/Card';
+import { FaFacebook, FaTwitter, FaInstagram, FaShoppingCart,  } from 'react-icons/fa';
+import './Navigation.css';
 
-const Navigation = () => {
-  const [showMenu, setShowMenu] = useState(false);
+function Navigation() {
   const [location, setLocation] = useState('Machhapokhari, Tokha');
-  const [searchTerm, setSearchTerm] = useState('');
-  const [searchResults, setSearchResults] = useState([]);
-  const [showMore, setShowMore] = useState(false);
+  const [isSticky, setIsSticky] = useState(false);
+
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const stickyOffset = document.querySelector('.Navigation').offsetTop;
+      setIsSticky(window.pageYOffset > stickyOffset);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
+  const [cartItemsState, setCartItemsState] = useState(
+    JSON.parse(localStorage.getItem('cartItems')) || []
+  );
   const [cartCount, setCartCount] = useState(0);
   const [totalAmount, setTotalAmount] = useState(0);
-  const [cartItemsState, setCartItemsState] = useState([]);
 
-  const searchRef = useRef(null);
 
-  const toggleMenu = () => {
-    setShowMenu(prevShowMenu => !prevShowMenu);
-  };
+  useEffect(() => {
+    const uniqueProductIds = new Set(cartItemsState.map((item) => item.id));
+    const totalCount = uniqueProductIds.size;
+    const totalNRP = cartItemsState.reduce(
+      (total, item) => total + item.price * item.quantity,
+      0
+    );
+
+    setCartCount(totalCount);
+    setTotalAmount(totalNRP);
+
+    localStorage.setItem('cartItems', JSON.stringify(cartItemsState));
+  }, [cartItemsState]);
 
   const handleLocationChange = (e) => {
     setLocation(e.target.value);
   };
+
+  const [searchTerm, setSearchTerm] = useState('');
+  const [searchResults, setSearchResults] = useState([]);
+  const [showMore, setShowMore] = useState(false);
+
+  const searchRef = useRef(null);
 
   const handleSearch = (event) => {
     setSearchTerm(event.target.value);
@@ -69,18 +97,6 @@ const Navigation = () => {
       // Fetch updated cart items from localStorage
       const updatedCartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
       setCartItemsState(updatedCartItems);
-
-      // Calculate cart count and total amount
-      let totalCount = 0;
-      let totalNRP = 0;
-
-      updatedCartItems.forEach((item) => {
-        totalCount += item.quantity;
-        totalNRP += item.quantity * item.price;
-      });
-
-      setCartCount(totalCount);
-      setTotalAmount(totalNRP);
     }, 100); // Refresh every 0.1 second
 
     return () => {
@@ -88,36 +104,37 @@ const Navigation = () => {
     };
   }, []);
 
-  const isSticky = true; // You need to define isSticky according to your logic
+
 
   return (
     <div>
-      <nav>
-        <div className="nav-container">
+    <nav>
+      <div className="nav-container">
+       
           <div className="social-media">
             <div className="icon">
-              <a href="https://www.facebook.com">
+              <Link to="https://www.facebook.com">
                 <FaFacebook />
-              </a>
+              </Link>
             </div>
             <div className="icon">
-              <a href="https://www.twitter.com">
+              <Link to="https://www.twitter.com">
                 <FaTwitter />
-              </a>
+              </Link>
             </div>
             <div className="icon">
-              <a href="https://www.instagram.com">
+              <Link to="https://www.instagram.com">
                 <FaInstagram />
-              </a>
+              </Link>
             </div>
           </div>
 
-          <ul className={`nav-links ${showMenu ? 'show-menu' : ''}`}>
+          <ul className={`nav-links`}>
             <li>
               <Link to="/Offer">Offer</Link>
             </li>
             <li>
-              <Link to="/wishlist">Wishlist</Link>
+              <Link to="/offer">Wishlist</Link>
             </li>
             <li>
               <Link to="#">Login</Link>
@@ -127,7 +144,7 @@ const Navigation = () => {
       </nav>
 
       <section className={`Navigation ${isSticky ? 'sticky' : ''}`}>
-        <select className='location' value={location} onChange={handleLocationChange}>
+        <select  className='location' value={location} onChange={handleLocationChange}>
           <option>Machhapokhari, Tokha</option>
         </select>
 
@@ -139,7 +156,6 @@ const Navigation = () => {
             value={searchTerm}
             onChange={handleSearch}
           />
-
           <div className="search-container" ref={searchRef}>
             {searchTerm.length > 0 && (
               <button className="clear-button" onClick={handleClear}>
